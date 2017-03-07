@@ -1,0 +1,21 @@
+{
+  "name": "graphing-slope-intercept",
+  "version": "1.0.0-dev.1",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phetsims/graphing-slope-intercept.git"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.0",
+    "grunt-eslint": "~19.0.0"
+  },
+  "phet": {
+    "requirejsNamespace": "GRAPHING_SLOPE_INTERCEPT",
+    "phetLibs": [
+      "graphing-lines",
+      "vegas",
+      "vibe"
+    ]
+  }
+}
