@@ -51,44 +51,6 @@ define( function( require ) {
     ];
   };
 
-  // Creates the 3 sets of slopes that are identified in the Graphing Lines design document.
-  ChallengeFactory2.createSlopeArrays = function() {
-    return [
-      // positive and negative integers
-      [
-        new Fraction( 1, 1 ),
-        new Fraction( 2, 1 ),
-        new Fraction( 3, 1 ),
-        new Fraction( 4, 1 ),
-        new Fraction( 5, 1 ),
-        new Fraction( -1, 1 ),
-        new Fraction( -2, 1 ),
-        new Fraction( -3, 1 ),
-        new Fraction( -4, 1 ),
-        new Fraction( -5, 1 )
-      ],
-      // positive fractions
-      ChallengeFactory2.createPositiveFractionalSlopes(),
-      // negative fractions
-      [
-        new Fraction( -1, 2 ),
-        new Fraction( -1, 3 ),
-        new Fraction( -1, 4 ),
-        new Fraction( -1, 5 ),
-        new Fraction( -2, 3 ),
-        new Fraction( -3, 4 ),
-        new Fraction( -2, 5 ),
-        new Fraction( -3, 5 ),
-        new Fraction( -4, 5 ),
-        new Fraction( -3, 2 ),
-        new Fraction( -4, 3 ),
-        new Fraction( -5, 2 ),
-        new Fraction( -5, 3 ),
-        new Fraction( -5, 4 )
-      ]
-    ];
-  };
-
   return inherit( ChallengeFactory, ChallengeFactory2, {
 
     /**
@@ -194,5 +156,49 @@ define( function( require ) {
       // shuffle and return
       return ( GLQueryParameters.shuffleChallenges ? phet.joist.random.shuffle( challenges ) : challenges );
     }
+  }, {
+
+    /**
+     * Creates the sets of positive fractional slopes that are identified in the Graphing Lines design document.
+     * @returns {Fraction[][]}
+     * @public
+     * @static
+     */
+    createSlopeArrays: function() {
+        return [
+          // positive and negative integers
+          [
+            new Fraction( 1, 1 ),
+            new Fraction( 2, 1 ),
+            new Fraction( 3, 1 ),
+            new Fraction( 4, 1 ),
+            new Fraction( 5, 1 ),
+            new Fraction( -1, 1 ),
+            new Fraction( -2, 1 ),
+            new Fraction( -3, 1 ),
+            new Fraction( -4, 1 ),
+            new Fraction( -5, 1 )
+          ],
+          // positive fractions
+          ChallengeFactory2.createPositiveFractionalSlopes(),
+          // negative fractions
+          [
+            new Fraction( -1, 2 ),
+            new Fraction( -1, 3 ),
+            new Fraction( -1, 4 ),
+            new Fraction( -1, 5 ),
+            new Fraction( -2, 3 ),
+            new Fraction( -3, 4 ),
+            new Fraction( -2, 5 ),
+            new Fraction( -3, 5 ),
+            new Fraction( -4, 5 ),
+            new Fraction( -3, 2 ),
+            new Fraction( -4, 3 ),
+            new Fraction( -5, 2 ),
+            new Fraction( -5, 3 ),
+            new Fraction( -5, 4 )
+          ]
+        ];
+      }
   } );
 } );
