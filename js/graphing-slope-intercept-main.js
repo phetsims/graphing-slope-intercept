@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var LineGameScreen = require( 'GRAPHING_LINES/linegame/LineGameScreen' );
+  var LineGameScreen = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/LineGameScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var SlopeInterceptScreen = require( 'GRAPHING_LINES/slopeintercept/SlopeInterceptScreen' );
@@ -36,7 +36,7 @@ define( function( require ) {
     var screens = [
       new SlopeScreen( tandem.createTandem( 'slopeScreen' ) ),
       new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ) ),
-      new LineGameScreen( tandem.createTandem( 'lineGameScreen' ) )
+      new LineGameScreen( tandem.createTandem( 'lineLineGameScreen' ) )
     ];
     var sim = new Sim( graphingSlopeInterceptTitleString, screens, options );
     sim.start();
