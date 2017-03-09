@@ -34,6 +34,7 @@ define( function( require ) {
 
   return inherit( ChallengeFactory, ChallengeFactory4, {
 
+    //TODO Challenges 1-4 will be identical to ChallengeFactory3, the difference is Challenges 5 & 6
     /**
      * Creates challenges for this game level.
      * @override
