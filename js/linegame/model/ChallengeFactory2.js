@@ -14,6 +14,7 @@ define( function( require ) {
   var ChallengeFactory = require( 'GRAPHING_LINES/linegame/model/ChallengeFactory' );
   var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var Fraction = require( 'PHETCOMMON/model/Fraction' );
+  var GLQueryParameters = require( 'GRAPHING_LINES/common/GLQueryParameters' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -199,7 +200,7 @@ define( function( require ) {
       }
 
       // shuffle and return
-      return phet.joist.random.shuffle( challenges );
+      return ( GLQueryParameters.shuffleChallenges ? phet.joist.random.shuffle( challenges ) : challenges );
     }
   } );
 } );
