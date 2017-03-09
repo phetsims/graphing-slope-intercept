@@ -30,27 +30,6 @@ define( function( require ) {
 
   graphingSlopeIntercept.register( 'ChallengeFactory2', ChallengeFactory2 );
 
-  // Creates the set of positive fractional slopes that are identified in the Graphing Lines design document.
-  ChallengeFactory2.createPositiveFractionalSlopes = function() {
-    return [
-      // positive fractions
-      new Fraction( 1, 4 ),
-      new Fraction( 1, 5 ),
-      new Fraction( 1, 6 ),
-      new Fraction( 1, 7 ),
-      new Fraction( 2, 5 ),
-      new Fraction( 3, 5 ),
-      new Fraction( 2, 7 ),
-      new Fraction( 3, 7 ),
-      new Fraction( 4, 7 ),
-      new Fraction( 5, 2 ),
-      new Fraction( 3, 2 ),
-      new Fraction( 7, 2 ),
-      new Fraction( 7, 3 ),
-      new Fraction( 7, 4 )
-    ];
-  };
-
   return inherit( ChallengeFactory, ChallengeFactory2, {
 
     /**
@@ -84,7 +63,7 @@ define( function( require ) {
 
       // NOTE: Do CHALLENGES 1 & 2 first, since they don't use "required" slopes or intercepts.
       // If we do them last, then slopeArrays and yInterceptArrays will be empty.
-      
+
       // CHALLENGE 1: Graph-the-Line, slope-intercept form, slope or intercept variable (random choice)
       {
         var manipulationMode = RandomChooser.choose( slopeInterceptManipulationModes );
@@ -165,40 +144,66 @@ define( function( require ) {
      * @static
      */
     createSlopeArrays: function() {
-        return [
-          // positive and negative integers
-          [
-            new Fraction( 1, 1 ),
-            new Fraction( 2, 1 ),
-            new Fraction( 3, 1 ),
-            new Fraction( 4, 1 ),
-            new Fraction( 5, 1 ),
-            new Fraction( -1, 1 ),
-            new Fraction( -2, 1 ),
-            new Fraction( -3, 1 ),
-            new Fraction( -4, 1 ),
-            new Fraction( -5, 1 )
-          ],
-          // positive fractions
-          ChallengeFactory2.createPositiveFractionalSlopes(),
-          // negative fractions
-          [
-            new Fraction( -1, 2 ),
-            new Fraction( -1, 3 ),
-            new Fraction( -1, 4 ),
-            new Fraction( -1, 5 ),
-            new Fraction( -2, 3 ),
-            new Fraction( -3, 4 ),
-            new Fraction( -2, 5 ),
-            new Fraction( -3, 5 ),
-            new Fraction( -4, 5 ),
-            new Fraction( -3, 2 ),
-            new Fraction( -4, 3 ),
-            new Fraction( -5, 2 ),
-            new Fraction( -5, 3 ),
-            new Fraction( -5, 4 )
-          ]
-        ];
-      }
+      return [
+        // positive and negative integers
+        [
+          new Fraction( 1, 1 ),
+          new Fraction( 2, 1 ),
+          new Fraction( 3, 1 ),
+          new Fraction( 4, 1 ),
+          new Fraction( 5, 1 ),
+          new Fraction( -1, 1 ),
+          new Fraction( -2, 1 ),
+          new Fraction( -3, 1 ),
+          new Fraction( -4, 1 ),
+          new Fraction( -5, 1 )
+        ],
+        // positive fractions
+        ChallengeFactory2.createPositiveFractionalSlopes(),
+        // negative fractions
+        [
+          new Fraction( -1, 2 ),
+          new Fraction( -1, 3 ),
+          new Fraction( -1, 4 ),
+          new Fraction( -1, 5 ),
+          new Fraction( -2, 3 ),
+          new Fraction( -3, 4 ),
+          new Fraction( -2, 5 ),
+          new Fraction( -3, 5 ),
+          new Fraction( -4, 5 ),
+          new Fraction( -3, 2 ),
+          new Fraction( -4, 3 ),
+          new Fraction( -5, 2 ),
+          new Fraction( -5, 3 ),
+          new Fraction( -5, 4 )
+        ]
+      ];
+    },
+
+    /**
+     * Creates the set of positive fractional slopes that are identified in the Graphing Lines design document.
+     * @returns {Fraction[]}
+     * @public
+     * @static
+     */
+    createPositiveFractionalSlopes: function() {
+      return [
+        // positive fractions
+        new Fraction( 1, 4 ),
+        new Fraction( 1, 5 ),
+        new Fraction( 1, 6 ),
+        new Fraction( 1, 7 ),
+        new Fraction( 2, 5 ),
+        new Fraction( 3, 5 ),
+        new Fraction( 2, 7 ),
+        new Fraction( 3, 7 ),
+        new Fraction( 4, 7 ),
+        new Fraction( 5, 2 ),
+        new Fraction( 3, 2 ),
+        new Fraction( 7, 2 ),
+        new Fraction( 7, 3 ),
+        new Fraction( 7, 4 )
+      ];
+    }
   } );
 } );
