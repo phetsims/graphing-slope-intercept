@@ -64,6 +64,9 @@ define( function( require ) {
       // choose 1 of each manipulation mode
       var slopeInterceptManipulationModes = [ ManipulationMode.SLOPE, ManipulationMode.INTERCEPT ];
 
+      // NOTE: Do CHALLENGES 1 & 2 first, since they don't use "required" slopes or intercepts.
+      // If we do them last, then slopeArrays and yInterceptArrays will be empty.
+
       // CHALLENGE 1: Graph-the-Line, slope-intercept form, slope or intercept variable (random choice)
       {
         // manipulation mode
