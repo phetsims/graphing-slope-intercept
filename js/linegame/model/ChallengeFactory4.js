@@ -23,6 +23,9 @@ define( function( require ) {
   var RandomChooser = require( 'GRAPHING_LINES/linegame/model/RandomChooser' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
 
+  /**
+   * @constructor
+   */
   function ChallengeFactory4() {
     ChallengeFactory.call( this );
   }
