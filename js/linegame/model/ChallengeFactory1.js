@@ -43,6 +43,8 @@ define( function( require ) {
     createChallenges: function( xRange, yRange ) {
 
       var challenges = [];
+      var slope;
+      var yIntercept;
 
       // for slope manipulation challenges, 1 slope must come from each list
       var slopeArrays = [
@@ -69,7 +71,6 @@ define( function( require ) {
 
       // CHALLENGE 1: Graph-the-Line, slope-intercept form, slope or intercept variable (random choice)
       {
-        // manipulation mode
         var manipulationMode = RandomChooser.choose( slopeInterceptManipulationModes );
 
         if ( manipulationMode === ManipulationMode.SLOPE ) {
@@ -90,7 +91,6 @@ define( function( require ) {
 
       // CHALLENGE 2: Make-the-Equation, slope-intercept form, slope or intercept variable (whichever was not chosen above)
       {
-        // manipulation mode
         manipulationMode = RandomChooser.choose( slopeInterceptManipulationModes );
 
         if ( manipulationMode === ManipulationMode.SLOPE ) {
@@ -110,8 +110,8 @@ define( function( require ) {
       }
 
       // CHALLENGE 3: Graph-the-Line, slope-intercept form, slope variable
-      var slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // second required slope
-      var yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays ); // unique y-intercept
+      slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // second required slope
+      yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays ); // unique y-intercept
       challenges.push( new GraphTheLine( '2 of 3 required slopes',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT, ManipulationMode.SLOPE, xRange, yRange ) );
