@@ -35,6 +35,7 @@ define( function( require ) {
 
   return inherit( ChallengeFactory, ChallengeFactory2, {
 
+    //TODO this looks identical to ChallengeFactory1, but with different slopeArrays and yInterceptArrays?
     /**
      * Creates challenges for this game level.
      * @override
