@@ -44,6 +44,8 @@ define( function( require ) {
     createChallenges: function( xRange, yRange ) {
 
       var challenges = [];
+
+      // hoist variables
       var slope;
       var yIntercept;
 
@@ -147,7 +149,7 @@ define( function( require ) {
         [ new Fraction( 3, 2 ), new Fraction( 4, 3 ), new Fraction( 5, 2 ), new Fraction( 5, 3 ) ],
         [ new Fraction( 1, 2 ), new Fraction( 1, 3 ), new Fraction( 1, 4 ), new Fraction( 1, 5 ) ],
         [ new Fraction( 2, 3 ), new Fraction( 3, 4 ), new Fraction( 3, 5 ), new Fraction( 2, 5 ) ]
-      ]
+      ];
     },
 
     /**

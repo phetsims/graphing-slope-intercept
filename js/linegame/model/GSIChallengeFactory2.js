@@ -11,16 +11,10 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var Fraction = require( 'PHETCOMMON/model/Fraction' );
-  var GLQueryParameters = require( 'GRAPHING_LINES/common/GLQueryParameters' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
-  var GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
   var GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'GRAPHING_LINES/common/model/Line' );
-  var MakeTheEquation = require( 'GRAPHING_LINES/linegame/model/MakeTheEquation' );
-  var ManipulationMode = require( 'GRAPHING_LINES/linegame/model/ManipulationMode' );
   var RandomChooser = require( 'GRAPHING_LINES/linegame/model/RandomChooser' );
   var Range = require( 'DOT/Range' );
 

@@ -21,7 +21,7 @@ define( function( require ) {
   var ManipulationMode = require( 'GRAPHING_LINES/linegame/model/ManipulationMode' );
   var PlaceThePoints = require( 'GRAPHING_LINES/linegame/model/PlaceThePoints' );
   var RandomChooser = require( 'GRAPHING_LINES/linegame/model/RandomChooser' );
-  var RangeWithValue = require( 'DOT/RangeWithValue' );
+  var Range = require( 'DOT/Range' );
 
   /**
    * @constructor
@@ -44,30 +44,19 @@ define( function( require ) {
      */
     createChallenges: function( xRange, yRange ) {
 
-      // all variables, manually hoisted
       var challenges = [];
+
+      // hoist variables
       var slope;
       var yIntercept;
-      var x1;
-      var y1;
-      var rise;
-      var run;
 
       // for slope manipulation challenges, 1 slope must come from each list
       var slopeArrays = this.createSlopeArrays( xRange, yRange );
-      var slopeArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, slopeArrays.length - 1 ) );
+      var slopeArrayIndices = RandomChooser.rangeToArray( new Range( 0, slopeArrays.length - 1 ) );
 
       // for y-intercept manipulation challenges, one must be positive, one negative
       var yInterceptArrays = this.createYInterceptArrays( yRange );
-      var yInterceptArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, yInterceptArrays.length - 1 ) );
-
-      // for Place-the-Point challenges
-      var range = new RangeWithValue( -5, 5 );
-      assert && assert( xRange.containsRange( range ) && yRange.containsRange( range ) );
-      var xList = RandomChooser.rangeToArray( range );
-      var yList = RandomChooser.rangeToArray( range );
-      var riseList = RandomChooser.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
-      var runList = RandomChooser.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
+      var yInterceptArrayIndices = RandomChooser.rangeToArray( new Range( 0, yInterceptArrays.length - 1 ) );
 
       // CHALLENGE 1: Graph-the-Line, slope-intercept form, slope and intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays ); // first required slope
@@ -97,11 +86,38 @@ define( function( require ) {
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT, ManipulationMode.SLOPE_INTERCEPT, xRange, yRange ) );
 
+      // CHALLENGE 5 & 6: Place-the-Point, slope-intercept
+      var placeThePointChallenges = this.createPlaceThePointChallenges( xRange, yRange );
+      challenges = challenges.concat( placeThePointChallenges );
+
+      // shuffle and return
+      return ( GLQueryParameters.shuffleChallenges ? phet.joist.random.shuffle( challenges ) : challenges );
+    },
+
+    /**
+     * Creates place-the-point challenges for this level.
+     * @param {Range} xRange
+     * @param {Range} yRange
+     * @returns {PlaceThePoints[]}
+     * @protected
+     */
+    createPlaceThePointChallenges: function( xRange, yRange ) {
+
+      var challenges = [];
+
+      // for Place-the-Point challenges
+      var range = new Range( -5, 5 );
+      assert && assert( xRange.containsRange( range ) && yRange.containsRange( range ) );
+      var xList = RandomChooser.rangeToArray( range );
+      var yList = RandomChooser.rangeToArray( range );
+      var riseList = RandomChooser.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
+      var runList = RandomChooser.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
+
       // CHALLENGE 5: Place-the-Point, slope-intercept
-      x1 = 0; // y-intercept must be an integer
-      y1 = RandomChooser.choose( yList );
-      rise = RandomChooser.choose( riseList );
-      run = RandomChooser.choose( runList );
+      var x1 = 0; // y-intercept must be an integer
+      var y1 = RandomChooser.choose( yList );
+      var rise = RandomChooser.choose( riseList );
+      var run = RandomChooser.choose( runList );
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
         run = RandomChooser.choose( runList );
       }
@@ -121,8 +137,7 @@ define( function( require ) {
         new Line( x1, y1, x1 + run, y1 + rise ),
         EquationForm.SLOPE_INTERCEPT, xRange, yRange ) );
 
-      // shuffle and return
-      return ( GLQueryParameters.shuffleChallenges ? phet.joist.random.shuffle( challenges ) : challenges );
+      return challenges;
     }
   } );
 } );
