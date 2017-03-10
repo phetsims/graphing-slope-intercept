@@ -2,6 +2,7 @@
 
 /**
  * Creates game challenges for Level 3 in the 'Graphing Slope-Intercept' sim.
+ * Uses the same slope and y-intercept arrays as Level 2.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -9,12 +10,11 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ChallengeFactory = require( 'GRAPHING_LINES/linegame/model/ChallengeFactory' );
-  var ChallengeFactory2 = require( 'GRAPHING_LINES/linegame/model/ChallengeFactory2' );
   var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var GLQueryParameters = require( 'GRAPHING_LINES/common/GLQueryParameters' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
+  var GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'GRAPHING_LINES/common/model/Line' );
   var MakeTheEquation = require( 'GRAPHING_LINES/linegame/model/MakeTheEquation' );
@@ -27,21 +27,20 @@ define( function( require ) {
    * @constructor
    */
   function GSIChallengeFactory3() {
-    ChallengeFactory.call( this );
+    GSIChallengeFactory2.call( this );
   }
 
   graphingSlopeIntercept.register( 'GSIChallengeFactory3', GSIChallengeFactory3 );
 
-  return inherit( ChallengeFactory, GSIChallengeFactory3, {
+  return inherit( GSIChallengeFactory2, GSIChallengeFactory3, {
 
     /**
      * Creates challenges for this game level.
-     * @override
      * @param {Range} xRange range of the graph's x axis
      * @param {Range} yRange range of the graph's y axis
      * @return {Challenge[]} array of challenges
-     * @override
      * @public
+     * @override
      */
     createChallenges: function( xRange, yRange ) {
 
@@ -55,14 +54,11 @@ define( function( require ) {
       var run;
 
       // for slope manipulation challenges, 1 slope must come from each list
-      var slopeArrays = ChallengeFactory2.createSlopeArrays(); // same slopes as level 1
+      var slopeArrays = this.createSlopeArrays( xRange, yRange );
       var slopeArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, slopeArrays.length - 1 ) );
 
       // for y-intercept manipulation challenges, one must be positive, one negative
-      var yInterceptArrays = [
-        RandomChooser.rangeToArray( new RangeWithValue( yRange.min, -1 ) ),
-        RandomChooser.rangeToArray( new RangeWithValue( 1, yRange.max ) )
-      ];
+      var yInterceptArrays = this.createYInterceptArrays( yRange );
       var yInterceptArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, yInterceptArrays.length - 1 ) );
 
       // for Place-the-Point challenges

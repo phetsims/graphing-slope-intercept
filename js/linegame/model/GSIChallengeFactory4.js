@@ -10,12 +10,12 @@ define( function( require ) {
 
   // modules
   var ChallengeFactory = require( 'GRAPHING_LINES/linegame/model/ChallengeFactory' );
-  var ChallengeFactory2 = require( 'GRAPHING_LINES/linegame/model/ChallengeFactory2' );
   var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var Fraction = require( 'PHETCOMMON/model/Fraction' );
   var GLQueryParameters = require( 'GRAPHING_LINES/common/GLQueryParameters' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
+  var GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'GRAPHING_LINES/common/model/Line' );
   var MakeTheEquation = require( 'GRAPHING_LINES/linegame/model/MakeTheEquation' );
@@ -58,15 +58,15 @@ define( function( require ) {
       var point;
       var positiveSlopes;
 
+      //TODO replace this by extending GSIChallengeFactory2?
+      var challengeFactory2 = new GSIChallengeFactory2();
+
       // for slope manipulation challenges, 1 slope must come from each list
-      slopeArrays = ChallengeFactory2.createSlopeArrays();
+      slopeArrays = challengeFactory2.createSlopeArrays( xRange, yRange );
       slopeArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, slopeArrays.length - 1 ) );
 
       // for y-intercept manipulation challenges, one must be positive, one negative
-      yInterceptArrays = [
-        RandomChooser.rangeToArray( new RangeWithValue( yRange.min, -1 ) ),
-        RandomChooser.rangeToArray( new RangeWithValue( 1, yRange.max ) )
-      ];
+      yInterceptArrays = challengeFactory2.createYInterceptArrays( yRange );
       yInterceptArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, yInterceptArrays.length - 1 ) );
 
       // equation form for 3rd challenge of each type
@@ -128,7 +128,7 @@ define( function( require ) {
        */
       {
         // choose a positive fractional slope
-        positiveSlopes = ChallengeFactory2.createPositiveFractionalSlopes();
+        positiveSlopes = challengeFactory2.createPositiveFractionalSlopes();
         positiveSlopes.push( new Fraction( 2, 1 ) );
         positiveSlopes.push( new Fraction( 3, 1 ) );
         positiveSlopes.push( new Fraction( 4, 1 ) );
