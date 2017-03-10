@@ -26,13 +26,13 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function ChallengeFactory4() {
+  function GSIChallengeFactory4() {
     ChallengeFactory.call( this );
   }
 
-  graphingSlopeIntercept.register( 'ChallengeFactory4', ChallengeFactory4 );
+  graphingSlopeIntercept.register( 'GSIChallengeFactory4', GSIChallengeFactory4 );
 
-  return inherit( ChallengeFactory, ChallengeFactory4, {
+  return inherit( ChallengeFactory, GSIChallengeFactory4, {
 
     //TODO Challenges 1-4 will be identical to ChallengeFactory3, the difference is Challenges 5 & 6
     /**

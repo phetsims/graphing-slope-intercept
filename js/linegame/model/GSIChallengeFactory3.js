@@ -26,13 +26,13 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function ChallengeFactory3() {
+  function GSIChallengeFactory3() {
     ChallengeFactory.call( this );
   }
 
-  graphingSlopeIntercept.register( 'ChallengeFactory3', ChallengeFactory3 );
+  graphingSlopeIntercept.register( 'GSIChallengeFactory3', GSIChallengeFactory3 );
 
-  return inherit( ChallengeFactory, ChallengeFactory3, {
+  return inherit( ChallengeFactory, GSIChallengeFactory3, {
 
     /**
      * Creates challenges for this game level.

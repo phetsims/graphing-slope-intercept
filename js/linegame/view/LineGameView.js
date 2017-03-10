@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var BaseGameView = require( 'GRAPHING_LINES/linegame/view/BaseGameView' );
+  var GLRewardNode = require( 'GRAPHING_LINES/linegame/view/GLRewardNode' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var inherit = require( 'PHET_CORE/inherit' );
 
@@ -25,8 +26,24 @@ define( function( require ) {
    */
   function LineGameView( model ) {
 
-    // uses level images from graphing-lines, assigns them to different levels that their file names indicate
-    BaseGameView.call( this, model, [ level1Image, level3Image, level5Image, level6Image ] );
+    // Images for the level-selection buttons, ordered by level.
+    // Uses level images from graphing-lines, assigns them to different levels that their file names indicate.
+    var levelImages = [
+      level1Image,
+      level3Image,
+      level5Image,
+      level6Image
+    ];
+
+    // functions that create nodes for the game reward, ordered by level
+    var rewardFactoryFunctions = [
+      GLRewardNode.createGraphNodes,
+      GLRewardNode.createPointToolNodes,
+      GLRewardNode.createPaperAirplaneNodes,
+      GLRewardNode.createSmileyFaceNodes
+    ];
+
+    BaseGameView.call( this, model, levelImages, rewardFactoryFunctions );
   }
 
   graphingSlopeIntercept.register( 'LineGameView', LineGameView );

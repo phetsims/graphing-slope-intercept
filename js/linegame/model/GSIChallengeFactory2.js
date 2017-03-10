@@ -25,13 +25,13 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function ChallengeFactory2() {
+  function GSIChallengeFactory2() {
     ChallengeFactory.call( this );
   }
 
-  graphingSlopeIntercept.register( 'ChallengeFactory2', ChallengeFactory2 );
+  graphingSlopeIntercept.register( 'GSIChallengeFactory2', GSIChallengeFactory2 );
 
-  return inherit( ChallengeFactory, ChallengeFactory2, {
+  return inherit( ChallengeFactory, GSIChallengeFactory2, {
 
     //TODO this looks identical to ChallengeFactory1, but with different slopeArrays and yInterceptArrays?
     /**
@@ -50,7 +50,7 @@ define( function( require ) {
       var yIntercept;
 
       // for slope manipulation challenges, 1 slope must come from each list
-      var slopeArrays = ChallengeFactory2.createSlopeArrays();
+      var slopeArrays = GSIChallengeFactory2.createSlopeArrays();
       var slopeArrayIndices = RandomChooser.rangeToArray( new RangeWithValue( 0, slopeArrays.length - 1 ) );
 
       // for y-intercept manipulation challenges, one must be positive, one negative
@@ -161,7 +161,7 @@ define( function( require ) {
           new Fraction( -5, 1 )
         ],
         // positive fractions
-        ChallengeFactory2.createPositiveFractionalSlopes(),
+        GSIChallengeFactory2.createPositiveFractionalSlopes(),
         // negative fractions
         [
           new Fraction( -1, 2 ),
