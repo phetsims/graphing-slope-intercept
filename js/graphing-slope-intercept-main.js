@@ -13,7 +13,6 @@ define( function( require ) {
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var SlopeInterceptScreen = require( 'GRAPHING_LINES/slopeintercept/SlopeInterceptScreen' );
-  var SlopeScreen = require( 'GRAPHING_LINES/slope/SlopeScreen' );
   var Tandem = require( 'TANDEM/Tandem' );
 
   // strings
@@ -34,7 +33,6 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
     var screens = [
-      new SlopeScreen( tandem.createTandem( 'slopeScreen' ) ),
       new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ) ),
       new LineGameScreen( tandem.createTandem( 'lineLineGameScreen' ) )
     ];
