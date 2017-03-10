@@ -58,43 +58,43 @@ define( function( require ) {
       var yInterceptArrays = this.createYInterceptArrays( yRange );
       var yInterceptArrayIndices = RandomChooser.rangeToArray( new Range( 0, yInterceptArrays.length - 1 ) );
 
-      // CHALLENGE 1: Graph-the-Line, slope-intercept form, slope and intercept variable
+      // CHALLENGE 1: Graph-the-Line, slope & intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays ); // first required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // first required y-intercept
-      challenges.push( new GraphTheLine( 'required y-intercept, slope and intercept manipulators',
+      challenges.push( new GraphTheLine( 'required y-intercept, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 2: Graph-the-Line, slope-intercept form, slope and intercept variable
+      // CHALLENGE 2: Graph-the-Line, slope & intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // second required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-      challenges.push( new GraphTheLine( 'required slope, slope and intercept manipulators',
+      challenges.push( new GraphTheLine( 'required slope, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 3: Make-the-Equation, slope-intercept form, slope and intercept variable
+      // CHALLENGE 3: Make-the-Equation, slope & intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // second required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // second required y-intercept
-      challenges.push( new MakeTheEquation( 'required slope, required y-intercept, slope and intercept manipulators',
+      challenges.push( new MakeTheEquation( 'required slope, required y-intercept, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 4: Make-the-Equation, slope-intercept, slope and intercept variable
+      // CHALLENGE 4: Make-the-Equation, slope & intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // third required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-      challenges.push( new MakeTheEquation( 'required slope, slope and intercept manipulators',
+      challenges.push( new MakeTheEquation( 'required slope, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 5 & 6: Place-the-Point, slope-intercept
+      // CHALLENGE 5 & 6: Place-the-Point
       var placeThePointChallenges = this.createPlaceThePointChallenges( xRange, yRange );
       challenges = challenges.concat( placeThePointChallenges );
 
@@ -113,7 +113,6 @@ define( function( require ) {
 
       var challenges = [];
 
-      // for Place-the-Point challenges
       var range = new Range( -5, 5 );
       assert && assert( xRange.containsRange( range ) && yRange.containsRange( range ) );
       var xList = RandomChooser.rangeToArray( range );
@@ -121,7 +120,7 @@ define( function( require ) {
       var riseList = RandomChooser.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
       var runList = RandomChooser.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
 
-      // CHALLENGE 5: Place-the-Point, slope-intercept
+      // CHALLENGE 5: Place-the-Point
       var x1 = 0; // y-intercept must be an integer
       var y1 = RandomChooser.choose( yList );
       var rise = RandomChooser.choose( riseList );
@@ -134,7 +133,7 @@ define( function( require ) {
         EquationForm.SLOPE_INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 6: Place-the-Point, slope-intercept
+      // CHALLENGE 6: Place-the-Point
       x1 = RandomChooser.choose( xList );
       y1 = RandomChooser.choose( yList );
       rise = RandomChooser.choose( riseList );

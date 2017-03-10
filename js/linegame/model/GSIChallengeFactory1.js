@@ -65,14 +65,14 @@ define( function( require ) {
       // NOTE: Do CHALLENGES 1 & 2 first, since they don't use "required" slopes or intercepts.
       // If we do them last, then slopeArrays and yInterceptArrays will be empty.
 
-      // CHALLENGE 1: Graph-the-Line, slope-intercept form, slope or intercept variable (random choice)
+      // CHALLENGE 1: Graph-the-Line, slope or intercept variable (random choice)
       {
         var manipulationMode = RandomChooser.choose( slopeInterceptManipulationModes );
 
         if ( manipulationMode === ManipulationMode.SLOPE ) {
           slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // first required slope
           yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-          challenges.push( new GraphTheLine( 'required slope, slope manipulator',
+          challenges.push( new GraphTheLine( 'required slope, slope variable',
             Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
             EquationForm.SLOPE_INTERCEPT,
             ManipulationMode.SLOPE,
@@ -81,7 +81,7 @@ define( function( require ) {
         else {
           slope = RandomChooser.chooseFromArrays( slopeArrays );
           yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-          challenges.push( new GraphTheLine( 'y-intercept manipulator',
+          challenges.push( new GraphTheLine( 'y-intercept variable',
             Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
             EquationForm.SLOPE_INTERCEPT,
             ManipulationMode.INTERCEPT,
@@ -89,14 +89,14 @@ define( function( require ) {
         }
       }
 
-      // CHALLENGE 2: Make-the-Equation, slope-intercept form, slope or intercept variable (whichever was not chosen above)
+      // CHALLENGE 2: Make-the-Equation, slope or intercept variable (whichever was not chosen above)
       {
         manipulationMode = RandomChooser.choose( slopeInterceptManipulationModes );
 
         if ( manipulationMode === ManipulationMode.SLOPE ) {
           slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // first required slope
           yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-          challenges.push( new MakeTheEquation( 'required slope, slope manipulator',
+          challenges.push( new MakeTheEquation( 'required slope, slope variable',
             Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
             EquationForm.SLOPE_INTERCEPT,
             ManipulationMode.SLOPE,
@@ -105,7 +105,7 @@ define( function( require ) {
         else {
           slope = RandomChooser.chooseFromArrays( slopeArrays );
           yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-          challenges.push( new MakeTheEquation( 'y-intercept manipulator',
+          challenges.push( new MakeTheEquation( 'y-intercept variable',
             Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
             EquationForm.SLOPE_INTERCEPT,
             ManipulationMode.INTERCEPT,
@@ -113,37 +113,37 @@ define( function( require ) {
         }
       }
 
-      // CHALLENGE 3: Graph-the-Line, slope-intercept form, slope variable
+      // CHALLENGE 3: Graph-the-Line, slope variable
       slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // second required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-      challenges.push( new GraphTheLine( 'required slope, slope manipulator',
+      challenges.push( new GraphTheLine( 'required slope, slope variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE,
         xRange, yRange ) );
 
-      // CHALLENGE 4: Graph-the-Line, slope-intercept form, intercept variable
+      // CHALLENGE 4: Graph-the-Line, intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays );
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // first required y-intercept
-      challenges.push( new GraphTheLine( 'required y-intercept, y-intercept manipulator',
+      challenges.push( new GraphTheLine( 'required y-intercept, y-intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 5: Make-the-Equation, slope-intercept form, slope variable
+      // CHALLENGE 5: Make-the-Equation, slope variable
       slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // third required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
-      challenges.push( new MakeTheEquation( 'required slope, slope manipulator',
+      challenges.push( new MakeTheEquation( 'required slope, slope variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE,
         xRange, yRange ) );
 
-      // CHALLENGE 6: Make-the-Equation, slope-intercept form, intercept variable
+      // CHALLENGE 6: Make-the-Equation, intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays );
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // second required y-intercept
-      challenges.push( new MakeTheEquation( 'required y-intercept, y-intercept manipulator',
+      challenges.push( new MakeTheEquation( 'required y-intercept, y-intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.INTERCEPT,
