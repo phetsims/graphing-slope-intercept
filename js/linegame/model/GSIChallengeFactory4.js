@@ -44,14 +44,18 @@ define( function( require ) {
       // CHALLENGE 5: slope=0, random y-intercept (exclude zero)
       var yInterceptArray = RandomChooser.rangeToArray( yRange, { excludeZero: true } ); // exclude zero
       var yIntercept = RandomChooser.choose( yInterceptArray );
-      challenges.push( new PlaceThePoints( 'slope=0, random y-intercept', new Line( 0, yIntercept, 1, yIntercept ),
-        EquationForm.SLOPE_INTERCEPT, xRange, yRange ) );
+      challenges.push( new PlaceThePoints( 'slope=0, random y-intercept',
+        new Line( 0, yIntercept, 1, yIntercept ),
+        EquationForm.SLOPE_INTERCEPT,
+        xRange, yRange ) );
 
       // CHALLENGE 6: slope=undefined, random x-intercept (exclude zero)
       var xInterceptArray = RandomChooser.rangeToArray( xRange, { excludeZero: true } ); // exclude zero
       var xIntercept = RandomChooser.choose( xInterceptArray );
-      challenges.push( new PlaceThePoints( 'slope=undefined, random x-intercept', new Line( xIntercept, 0, xIntercept, 1 ),
-        EquationForm.SLOPE_INTERCEPT, xRange, yRange ) );
+      challenges.push( new PlaceThePoints( 'slope=undefined, random x-intercept',
+        new Line( xIntercept, 0, xIntercept, 1 ),
+        EquationForm.SLOPE_INTERCEPT,
+        xRange, yRange ) );
 
       return challenges;
     }
