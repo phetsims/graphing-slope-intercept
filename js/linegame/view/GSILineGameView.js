@@ -1,7 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * View for the 'Line Game' screen.
+ * View for the 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -24,7 +24,7 @@ define( function( require ) {
    * @param {LineGameModel} model
    * @constructor
    */
-  function LineGameView( model ) {
+  function GSILineGameView( model ) {
 
     // Images for the level-selection buttons, ordered by level.
     // Uses level images from graphing-lines, assigns them to different levels that their file names indicate.
@@ -46,7 +46,7 @@ define( function( require ) {
     BaseGameView.call( this, model, levelImages, rewardFactoryFunctions );
   }
 
-  graphingSlopeIntercept.register( 'LineGameView', LineGameView );
+  graphingSlopeIntercept.register( 'GSILineGameView', GSILineGameView );
 
-  return inherit( BaseGameView, LineGameView );
+  return inherit( BaseGameView, GSILineGameView );
 } );

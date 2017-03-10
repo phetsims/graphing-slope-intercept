@@ -1,7 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * Model for the 'Line Game' screen.
+ * Model for the 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -20,7 +20,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function LineGameModel() {
+  function GSILineGameModel() {
 
     // a challenge factory for each level
     var challengeFactories = [
@@ -33,8 +33,8 @@ define( function( require ) {
     BaseGameModel.call( this, challengeFactories );
   }
 
-  graphingSlopeIntercept.register( 'LineGameModel', LineGameModel );
+  graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );
 
 
-  return inherit( BaseGameModel, LineGameModel );
+  return inherit( BaseGameModel, GSILineGameModel );
 } );

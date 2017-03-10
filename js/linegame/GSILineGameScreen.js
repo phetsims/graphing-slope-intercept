@@ -1,7 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * The 'Line Game' screen.
+ * The 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -9,10 +9,10 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var LineGameModel = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/LineGameModel' );
-  var LineGameView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/LineGameView' );
   var GLColors = require( 'GRAPHING_LINES/common/GLColors' );
   var GLIconFactory = require( 'GRAPHING_LINES/common/view/GLIconFactory' );
+  var GSILineGameModel = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSILineGameModel' );
+  var GSILineGameView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/GSILineGameView' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
@@ -25,7 +25,7 @@ define( function( require ) {
    * @param {Tandem} tandem
    * @constructor
    */
-  function LineGameScreen( tandem ) {
+  function GSILineGameScreen( tandem ) {
 
     var options = {
       name: screenLineGameString,
@@ -35,12 +35,12 @@ define( function( require ) {
     };
 
     Screen.call( this,
-      function() { return new LineGameModel(); },
-      function( model ) { return new LineGameView( model ); },
+      function() { return new GSILineGameModel(); },
+      function( model ) { return new GSILineGameView( model ); },
       options );
   }
 
-  graphingSlopeIntercept.register( 'LineGameScreen', LineGameScreen );
+  graphingSlopeIntercept.register( 'GSILineGameScreen', GSILineGameScreen );
 
-  return inherit( Screen, LineGameScreen );
+  return inherit( Screen, GSILineGameScreen );
 } );
