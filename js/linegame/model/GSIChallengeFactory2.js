@@ -2,7 +2,7 @@
 
 /**
  * Creates game challenges for Level 2 in the 'Graphing Slope-Intercept' sim.
- * Identical to Level 1, but with different sets of required slopes and y-intercepts.
+ * Identical to Level 1, but with different sets of possible slopes and y-intercepts.
  * See createSlopeArrays and createYInterceptArrays.
  *
  * @author Chris Malley (PixelZoom, Inc.)
@@ -30,7 +30,7 @@ define( function( require ) {
   return inherit( GSIChallengeFactory1, GSIChallengeFactory2, {
 
     /**
-     * Level 2 has a different set of required slopes, so override this function.
+     * Level 2 has a different set of possible slopes, so override this function.
      * Creates the sets of slopes used for generating challenges.
      * @param {Range} xRange - range of the graph's x axis
      * @param {Range} yRange - range of the graph's y axis
@@ -101,7 +101,7 @@ define( function( require ) {
     },
 
     /**
-     * Level 2 has a different set of required y-intercepts, so override this function.
+     * Level 2 has a different set of possible y-intercepts, so override this function.
      * Creates the sets of y-intercepts used for generating challenges.
      * @param {Range} yRange - range of the graph's y axis
      * @returns {number[][]}
