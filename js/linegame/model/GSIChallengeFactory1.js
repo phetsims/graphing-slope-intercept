@@ -1,8 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * Creates game challenges for Level 1, as specified in the design document.
- * Slope, intercept, and point (x1,y1) are all uniquely chosen.
+ * Creates game challenges for Level 1 in the 'Graphing Slope-Intercept' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -26,13 +25,13 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function ChallengeFactory1() {
+  function GSIChallengeFactory1() {
     ChallengeFactory.call( this );
   }
 
-  graphingSlopeIntercept.register( 'ChallengeFactory1', ChallengeFactory1 );
+  graphingSlopeIntercept.register( 'GSIChallengeFactory1', GSIChallengeFactory1 );
 
-  return inherit( ChallengeFactory, ChallengeFactory1, {
+  return inherit( ChallengeFactory, GSIChallengeFactory1, {
 
     /**
      * Creates challenges for this game level.

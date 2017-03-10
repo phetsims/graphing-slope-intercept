@@ -1,7 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * Creates game challenges for Level 3, as specified in the design document.
+ * Creates game challenges for Level 3 in the 'Graphing Slope-Intercept' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

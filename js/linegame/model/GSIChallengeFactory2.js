@@ -1,9 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * Creates game challenges for Level 2, as specified in the design document.
- * Slope and intercept are uniquely chosen.
- * Point (x1,y1) is not unique, but is chosen such that slope indicator is on the graph.
+ * Creates game challenges for Level 2 in the 'Graphing Slope-Intercept' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

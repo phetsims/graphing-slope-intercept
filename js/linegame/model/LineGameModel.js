@@ -10,11 +10,11 @@ define( function( require ) {
 
   // modules
   var BaseGameModel = require( 'GRAPHING_LINES/linegame/model/BaseGameModel' );
-  var ChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ChallengeFactory1' );
-  var ChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ChallengeFactory2' );
-  var ChallengeFactory3 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ChallengeFactory3' );
-  var ChallengeFactory4 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ChallengeFactory4' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
+  var GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
+  var GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
+  var GSIChallengeFactory3 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory3' );
+  var GSIChallengeFactory4 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory4' );
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
@@ -24,10 +24,10 @@ define( function( require ) {
 
     // a challenge factory for each level
     var challengeFactories = [
-      new ChallengeFactory1(),
-      new ChallengeFactory2(),
-      new ChallengeFactory3(),
-      new ChallengeFactory4()
+      new GSIChallengeFactory1(),
+      new GSIChallengeFactory2(),
+      new GSIChallengeFactory3(),
+      new GSIChallengeFactory4()
     ];
 
     BaseGameModel.call( this, challengeFactories );
