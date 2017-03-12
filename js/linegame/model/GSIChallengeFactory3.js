@@ -115,13 +115,12 @@ define( function( require ) {
 
       var range = new Range( -5, 5 );
       assert && assert( xRange.containsRange( range ) && yRange.containsRange( range ) );
-      var xList = RandomChooser.rangeToArray( range );
+      var x1 = 0; // causes y-intercept to be an integer
       var yList = RandomChooser.rangeToArray( range );
       var riseList = RandomChooser.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
       var runList = RandomChooser.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
 
-      // CHALLENGE 5: Place-the-Point
-      var x1 = 0; // y-intercept must be an integer
+      // CHALLENGE 5: Place-the-Point, integer y-intercept
       var y1 = RandomChooser.choose( yList );
       var rise = RandomChooser.choose( riseList );
       var run = RandomChooser.choose( runList );
@@ -133,15 +132,14 @@ define( function( require ) {
         EquationForm.SLOPE_INTERCEPT,
         xRange, yRange ) );
 
-      // CHALLENGE 6: Place-the-Point
-      x1 = RandomChooser.choose( xList );
+      // CHALLENGE 6: Place-the-Point, integer y-intercept
       y1 = RandomChooser.choose( yList );
       rise = RandomChooser.choose( riseList );
       run = RandomChooser.choose( runList );
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
         run = RandomChooser.choose( runList );
       }
-      challenges.push( new PlaceThePoints( 'random points',
+      challenges.push( new PlaceThePoints( 'random points, integer y-intercept',
         new Line( x1, y1, x1 + run, y1 + rise ),
         EquationForm.SLOPE_INTERCEPT,
         xRange, yRange ) );
