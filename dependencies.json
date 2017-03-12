@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.0.0-dev.1 Fri Mar 10 2017 13:36:59 GMT-0700 (MST)",
+  "comment": "# graphing-slope-intercept 1.0.0-dev.2 Sun Mar 12 2017 16:12:16 GMT-0600 (MDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "master"
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "c101ae14716aea37f3f696011bc74905bd37a4ce",
+    "sha": "67c42f5c1e30596bb162a37fad500f46d8c81927",
     "branch": "master"
   },
   "dot": {
@@ -21,15 +21,15 @@
     "branch": "master"
   },
   "graphing-lines": {
-    "sha": "6181cf6b3b7dd0ed15c04a5d53e404871713b70e",
+    "sha": "a694643ee9b5a46e0ca234b4e14e9712d4807e96",
     "branch": "master"
   },
   "graphing-slope-intercept": {
-    "sha": "a2d115471d0e8da00fe736a2aca7ed0418f05fcc",
+    "sha": "7a3bdc14c7741a394a430943644958f48e958a20",
     "branch": "master"
   },
   "joist": {
-    "sha": "695d3638a602f93027b09c63895ce4c1e332d2be",
+    "sha": "8243627600c4b93825d8600fd3b35d335017ad08",
     "branch": "master"
   },
   "kite": {
@@ -53,7 +53,7 @@
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "d971cc857d41630d05f34952fb726bd8d040b1df",
+    "sha": "cc0021e55c0241a50db8db1820e23f8c6680c3be",
     "branch": "master"
   },
   "sherpa": {
@@ -61,7 +61,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "9227a5f0f0ec2e051cd072a9469e37cbb048903e",
+    "sha": "8e97e2155a770521464b27e5b274f4fcbf54617b",
     "branch": "master"
   },
   "tandem": {
@@ -69,7 +69,7 @@
     "branch": "master"
   },
   "vegas": {
-    "sha": "f1e4577271361d95abc1f540b1ae449543b28826",
+    "sha": "4cd95338c5d48984b5e16559942ce785c5b23e91",
     "branch": "master"
   },
   "vibe": {
