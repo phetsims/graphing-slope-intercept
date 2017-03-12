@@ -27,7 +27,7 @@ define( function( require ) {
   function GSILineGameView( model ) {
 
     // Images for the level-selection buttons, ordered by level.
-    // Uses level images from graphing-lines, assigns them to different levels that their file names indicate.
+    // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
     var levelImages = [
       level1Image,
       level3Image,
