@@ -60,7 +60,7 @@ define( function( require ) {
 
       // CHALLENGE 1: Graph-the-Line, slope & intercept variable
       slope = RandomChooser.chooseFromArrays( slopeArrays ); // first required slope
-      yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // first required y-intercept
+      yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // required y-intercept
       challenges.push( new GraphTheLine( 'required y-intercept, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
@@ -77,8 +77,8 @@ define( function( require ) {
         xRange, yRange ) );
 
       // CHALLENGE 3: Make-the-Equation, slope & intercept variable
-      slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // second required slope
-      yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // second required y-intercept
+      slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // required slope
+      yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays, yInterceptArrayIndices ); // required y-intercept
       challenges.push( new MakeTheEquation( 'required slope, required y-intercept, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
@@ -86,7 +86,7 @@ define( function( require ) {
         xRange, yRange ) );
 
       // CHALLENGE 4: Make-the-Equation, slope & intercept variable
-      slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // third required slope
+      slope = RandomChooser.chooseFromArrays( slopeArrays, slopeArrayIndices ); // required slope
       yIntercept = RandomChooser.chooseFromArrays( yInterceptArrays );
       challenges.push( new MakeTheEquation( 'required slope, slope and intercept variable',
         Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
