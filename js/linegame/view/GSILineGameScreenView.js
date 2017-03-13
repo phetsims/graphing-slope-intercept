@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BaseGameView = require( 'GRAPHING_LINES/linegame/view/BaseGameView' );
+  var BaseGameScreenView = require( 'GRAPHING_LINES/linegame/view/BaseGameScreenView' );
   var GLRewardNode = require( 'GRAPHING_LINES/linegame/view/GLRewardNode' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -43,10 +43,10 @@ define( function( require ) {
       GLRewardNode.createSmileyFaceNodes
     ];
 
-    BaseGameView.call( this, model, levelImages, rewardFactoryFunctions );
+    BaseGameScreenView.call( this, model, levelImages, rewardFactoryFunctions );
   }
 
   graphingSlopeIntercept.register( 'GSILineGameScreenView', GSILineGameScreenView );
 
-  return inherit( BaseGameView, GSILineGameScreenView );
+  return inherit( BaseGameScreenView, GSILineGameScreenView );
 } );
