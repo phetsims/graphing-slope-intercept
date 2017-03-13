@@ -12,7 +12,7 @@ define( function( require ) {
   var GLColors = require( 'GRAPHING_LINES/common/GLColors' );
   var GLIconFactory = require( 'GRAPHING_LINES/common/view/GLIconFactory' );
   var GSILineGameModel = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSILineGameModel' );
-  var GSILineGameView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/GSILineGameView' );
+  var GSILineGameScreenView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/GSILineGameScreenView' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
@@ -36,7 +36,7 @@ define( function( require ) {
 
     Screen.call( this,
       function() { return new GSILineGameModel(); },
-      function( model ) { return new GSILineGameView( model ); },
+      function( model ) { return new GSILineGameScreenView( model ); },
       options );
   }
 

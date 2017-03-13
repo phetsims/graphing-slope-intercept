@@ -24,7 +24,7 @@ define( function( require ) {
    * @param {LineGameModel} model
    * @constructor
    */
-  function GSILineGameView( model ) {
+  function GSILineGameScreenView( model ) {
 
     // Images for the level-selection buttons, ordered by level.
     // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
@@ -46,7 +46,7 @@ define( function( require ) {
     BaseGameView.call( this, model, levelImages, rewardFactoryFunctions );
   }
 
-  graphingSlopeIntercept.register( 'GSILineGameView', GSILineGameView );
+  graphingSlopeIntercept.register( 'GSILineGameScreenView', GSILineGameScreenView );
 
-  return inherit( BaseGameView, GSILineGameView );
+  return inherit( BaseGameView, GSILineGameScreenView );
 } );
