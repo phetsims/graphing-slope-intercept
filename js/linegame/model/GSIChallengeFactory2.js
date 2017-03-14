@@ -13,16 +13,17 @@ define( function( require ) {
   // modules
   var Fraction = require( 'PHETCOMMON/model/Fraction' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
+  var GSIChallengeFactory = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory' );
   var GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var RandomChooser = require( 'GRAPHING_LINES/linegame/model/RandomChooser' );
   var Range = require( 'DOT/Range' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function GSIChallengeFactory2() {
-    GSIChallengeFactory1.call( this );
+  function GSIChallengeFactory2( options ) {
+    GSIChallengeFactory1.call( this, options );
   }
 
   graphingSlopeIntercept.register( 'GSIChallengeFactory2', GSIChallengeFactory2 );
@@ -32,13 +33,11 @@ define( function( require ) {
     /**
      * Level 2 has a different set of possible slopes, so override this function.
      * Creates the sets of slopes used for generating challenges.
-     * @param {Range} xRange - range of the graph's x axis
-     * @param {Range} yRange - range of the graph's y axis
      * @returns {Fraction[][]}
      * @public
      * @override
      */
-    createSlopeArrays: function( xRange, yRange ) {
+    createSlopeArrays: function() {
       return [
         // positive and negative integers
         [
@@ -103,15 +102,14 @@ define( function( require ) {
     /**
      * Level 2 has a different set of possible y-intercepts, so override this function.
      * Creates the sets of y-intercepts used for generating challenges.
-     * @param {Range} yRange - range of the graph's y axis
      * @returns {number[][]}
      * @protected
      * @override
      */
-    createYInterceptArrays: function( yRange ) {
+    createYInterceptArrays: function() {
       return [
-        RandomChooser.rangeToArray( new Range( yRange.min, -1 ) ),
-        RandomChooser.rangeToArray( new Range( 1, yRange.max ) )
+        GSIChallengeFactory.rangeToArray( new Range( this.yRange.min, -1 ) ),
+        GSIChallengeFactory.rangeToArray( new Range( 1, this.yRange.max ) )
       ];
     }
   } );

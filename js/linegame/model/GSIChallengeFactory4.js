@@ -13,17 +13,18 @@ define( function( require ) {
   // modules
   var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
+  var GSIChallengeFactory = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory' );
   var GSIChallengeFactory3 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory3' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'GRAPHING_LINES/common/model/Line' );
   var PlaceThePoints = require( 'GRAPHING_LINES/linegame/model/PlaceThePoints' );
-  var RandomChooser = require( 'GRAPHING_LINES/linegame/model/RandomChooser' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function GSIChallengeFactory4() {
-    GSIChallengeFactory3.call( this );
+  function GSIChallengeFactory4( options ) {
+    GSIChallengeFactory3.call( this, options );
   }
 
   graphingSlopeIntercept.register( 'GSIChallengeFactory4', GSIChallengeFactory4 );
@@ -32,30 +33,28 @@ define( function( require ) {
 
     /**
      * Creates place-the-point challenges for this level.
-     * @param {Range} xRange
-     * @param {Range} yRange
      * @returns {PlaceThePoints[]}
      * @protected
      */
-    createPlaceThePointChallenges: function( xRange, yRange ) {
+    createPlaceThePointChallenges: function() {
 
       var challenges = [];
 
-      // CHALLENGE 5: slope=0, random y-intercept (exclude zero)
-      var yInterceptArray = RandomChooser.rangeToArray( yRange, { excludeZero: true } ); // exclude zero
-      var yIntercept = RandomChooser.choose( yInterceptArray );
-      challenges.push( new PlaceThePoints( 'slope=0, random y-intercept',
+      // CHALLENGE 5
+      var yIntercepts = GSIChallengeFactory.rangeToArray( this.yRange, { excludeZero: true } );
+      var yIntercept = GSIChallengeFactory.choose( yIntercepts );
+      challenges.push( new PlaceThePoints( 'slope=0, random y-intercept (not zero)',
         new Line( 0, yIntercept, 1, yIntercept ),
         EquationForm.SLOPE_INTERCEPT,
-        xRange, yRange ) );
+        this.xRange, this.yRange ) );
 
-      // CHALLENGE 6: slope=undefined, random x-intercept (exclude zero)
-      var xInterceptArray = RandomChooser.rangeToArray( xRange, { excludeZero: true } ); // exclude zero
-      var xIntercept = RandomChooser.choose( xInterceptArray );
-      challenges.push( new PlaceThePoints( 'slope=undefined, random x-intercept',
+      // CHALLENGE 6
+      var xIntercepts = GSIChallengeFactory.rangeToArray( this.xRange, { excludeZero: true } );
+      var xIntercept = GSIChallengeFactory.choose( xIntercepts );
+      challenges.push( new PlaceThePoints( 'slope=undefined, random x-intercept (not zero)',
         new Line( xIntercept, 0, xIntercept, 1 ),
         EquationForm.SLOPE_INTERCEPT,
-        xRange, yRange ) );
+        this.xRange, this.yRange ) );
 
       return challenges;
     }
