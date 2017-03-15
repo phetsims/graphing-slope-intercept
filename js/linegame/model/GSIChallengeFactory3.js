@@ -2,7 +2,8 @@
 
 /**
  * Creates game challenges for Level 3 in the 'Graphing Slope-Intercept' sim.
- * Uses the same slope and y-intercept arrays as Level 2.
+ * Uses the same sets of slopes and y-intercepts as Level 2, but generates different challenges.
+ * See createChallenges.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
