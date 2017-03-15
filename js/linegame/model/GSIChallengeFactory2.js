@@ -101,8 +101,8 @@ define( function( require ) {
      */
     createYInterceptArrays: function() {
       return [
-        ValuePool.rangeToArray( new Range( this.yRange.min, -1 ) ),
-        ValuePool.rangeToArray( new Range( 1, this.yRange.max ) )
+        ValuePool.rangeToArray( new Range( this.yRange.min, -1 ) ), // negative intercepts
+        ValuePool.rangeToArray( new Range( 1, this.yRange.max ) )   // positive intercepts
       ];
     }
   } );

@@ -135,8 +135,8 @@ define( function( require ) {
       var yRangeSubset = new Range( -6, 4 );
       assert && assert( this.yRange.containsRange( yRangeSubset ), 'values are out of range' );
       return [
-        ValuePool.rangeToArray( new Range( yRangeSubset.min, -1 ) ),
-        ValuePool.rangeToArray( new Range( 1, yRangeSubset.max ) )
+        ValuePool.rangeToArray( new Range( yRangeSubset.min, -1 ) ), // negative intercepts
+        ValuePool.rangeToArray( new Range( 1, yRangeSubset.max ) )   // positive intercepts
       ];
     }
   } );
