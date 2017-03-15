@@ -84,8 +84,7 @@ define( function( require ) {
       assert && assert( slopePool.isEmpty(), 'some required slope was not used' );
       assert && assert( yInterceptPool.isEmpty(), 'some required y-intercept was not used' );
 
-      // shuffle and return
-      return this.shuffle( challenges );
+      return challenges;
     },
 
     /**
