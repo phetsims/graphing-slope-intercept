@@ -88,6 +88,9 @@ define( function( require ) {
       var placeThePointChallenges = this.createPlaceThePointChallenges();
       challenges = challenges.concat( placeThePointChallenges );
 
+      assert && assert( this.requiredSlopes.length === 0, 'some required slope was not used' );
+      assert && assert( this.requiredYIntercepts.length === 0, 'some required y-intercept was not used' );
+
       // shuffle and return
       return GSIChallengeFactory.shuffle( challenges );
     },
