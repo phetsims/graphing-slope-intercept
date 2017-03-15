@@ -13,10 +13,10 @@ define( function( require ) {
   // modules
   var Fraction = require( 'PHETCOMMON/model/Fraction' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
-  var GSIChallengeFactory = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory' );
   var GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
+  var ValuePool = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ValuePool' );
 
   /**
    * @param {Object} [options]
@@ -108,8 +108,8 @@ define( function( require ) {
      */
     createYInterceptArrays: function() {
       return [
-        GSIChallengeFactory.rangeToArray( new Range( this.yRange.min, -1 ) ),
-        GSIChallengeFactory.rangeToArray( new Range( 1, this.yRange.max ) )
+        ValuePool.rangeToArray( new Range( this.yRange.min, -1 ) ),
+        ValuePool.rangeToArray( new Range( 1, this.yRange.max ) )
       ];
     }
   } );

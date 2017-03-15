@@ -13,7 +13,6 @@ define( function( require ) {
   var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
-  var GSIChallengeFactory = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory' );
   var GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'GRAPHING_LINES/common/model/Line' );
@@ -21,6 +20,7 @@ define( function( require ) {
   var ManipulationMode = require( 'GRAPHING_LINES/linegame/model/ManipulationMode' );
   var PlaceThePoints = require( 'GRAPHING_LINES/linegame/model/PlaceThePoints' );
   var Range = require( 'DOT/Range' );
+  var ValuePool = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ValuePool' );
 
   /**
    * @param {Object} [options]
@@ -42,44 +42,36 @@ define( function( require ) {
      */
     createChallenges: function() {
 
-      this.initializePools();
+      // pools of values for slope and y-intercept
+      var slopePool = new ValuePool( this.createSlopeArrays() );
+      var yInterceptPool = new ValuePool( this.createYInterceptArrays() );
 
       var challenges = [];
-      var slope;
-      var yIntercept;
 
       // CHALLENGE 1
-      slope = this.chooseSlope();
-      yIntercept = this.chooseRequiredYIntercept();
       challenges.push( new GraphTheLine( 'required y-intercept, slope and intercept variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 2
-      slope = this.chooseRequiredSlope();
-      yIntercept = this.chooseYIntercept();
       challenges.push( new GraphTheLine( 'required slope, slope and intercept variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 3
-      slope = this.chooseRequiredSlope();
-      yIntercept = this.chooseRequiredYIntercept();
       challenges.push( new MakeTheEquation( 'required slope, required y-intercept, slope and intercept variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 4
-      slope = this.chooseRequiredSlope();
-      yIntercept = this.chooseYIntercept();
       challenges.push( new MakeTheEquation( 'required slope, slope and intercept variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
@@ -88,11 +80,11 @@ define( function( require ) {
       var placeThePointChallenges = this.createPlaceThePointChallenges();
       challenges = challenges.concat( placeThePointChallenges );
 
-      assert && assert( this.requiredSlopes.length === 0, 'some required slope was not used' );
-      assert && assert( this.requiredYIntercepts.length === 0, 'some required y-intercept was not used' );
+      assert && assert( slopePool.isEmpty(), 'some required slope was not used' );
+      assert && assert( yInterceptPool.isEmpty(), 'some required y-intercept was not used' );
 
       // shuffle and return
-      return GSIChallengeFactory.shuffle( challenges );
+      return this.shuffle( challenges );
     },
 
     /**
@@ -107,16 +99,16 @@ define( function( require ) {
       var range = new Range( -5, 5 );
       assert && assert( this.xRange.containsRange( range ) && this.yRange.containsRange( range ) );
       var x1 = 0; // causes y-intercept to be an integer
-      var yList = GSIChallengeFactory.rangeToArray( range );
-      var riseList = GSIChallengeFactory.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
-      var runList = GSIChallengeFactory.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
+      var yList = ValuePool.rangeToArray( range );
+      var riseList = ValuePool.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
+      var runList = ValuePool.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
 
       // CHALLENGE 5
-      var y1 = GSIChallengeFactory.choose( yList );
-      var rise = GSIChallengeFactory.choose( riseList );
-      var run = GSIChallengeFactory.choose( runList );
+      var y1 = ValuePool.choose( yList );
+      var rise = ValuePool.choose( riseList );
+      var run = ValuePool.choose( runList );
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
-        run = GSIChallengeFactory.choose( runList );
+        run = ValuePool.choose( runList );
       }
       challenges.push( new PlaceThePoints( 'random points, integer y-intercept',
         new Line( x1, y1, x1 + run, y1 + rise ),
@@ -124,11 +116,11 @@ define( function( require ) {
         this.xRange, this.yRange ) );
 
       // CHALLENGE 6
-      y1 = GSIChallengeFactory.choose( yList );
-      rise = GSIChallengeFactory.choose( riseList );
-      run = GSIChallengeFactory.choose( runList );
+      y1 = ValuePool.choose( yList );
+      rise = ValuePool.choose( riseList );
+      run = ValuePool.choose( runList );
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
-        run = GSIChallengeFactory.choose( runList );
+        run = ValuePool.choose( runList );
       }
       challenges.push( new PlaceThePoints( 'random points, integer y-intercept',
         new Line( x1, y1, x1 + run, y1 + rise ),

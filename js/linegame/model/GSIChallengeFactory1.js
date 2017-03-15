@@ -9,63 +9,28 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BaseChallengeFactory = require( 'GRAPHING_LINES/linegame/model/BaseChallengeFactory' );
   var EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   var Fraction = require( 'PHETCOMMON/model/Fraction' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
-  var GSIChallengeFactory = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'GRAPHING_LINES/common/model/Line' );
   var MakeTheEquation = require( 'GRAPHING_LINES/linegame/model/MakeTheEquation' );
   var ManipulationMode = require( 'GRAPHING_LINES/linegame/model/ManipulationMode' );
   var Range = require( 'DOT/Range' );
+  var ValuePool = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ValuePool' );
 
   /**
    * @param {Object} [options]
    * @constructor
    */
   function GSIChallengeFactory1( options ) {
-    GSIChallengeFactory.call( this, options );
+    BaseChallengeFactory.call( this, options );
   }
 
   graphingSlopeIntercept.register( 'GSIChallengeFactory1', GSIChallengeFactory1 );
 
-  return inherit( GSIChallengeFactory, GSIChallengeFactory1, {
-
-    /**
-     * Initializes the pools of values for slopes and y-intercepts.
-     * @protected
-     */
-    initializePools: function() {
-
-      var self = this;
-
-      // slopes ----------------------------------------------------
-
-      var slopeArrays = this.createSlopeArrays();
-
-      // @private choose 1 required slope from each array
-      this.requiredSlopes = [];
-      slopeArrays.forEach( function( array ) {
-        self.requiredSlopes.push( GSIChallengeFactory.choose( array ) );
-      } );
-
-      // @private the remaining slopes are up for grabs
-      this.slopes = _.flatten( slopeArrays );
-
-      // y-intercepts -----------------------------------------------
-
-      var yInterceptArrays = this.createYInterceptArrays();
-
-      // @private choose 1 required y-intercept from each array
-      this.requiredYIntercepts = [];
-      yInterceptArrays.forEach( function( array ) {
-        self.requiredYIntercepts.push( GSIChallengeFactory.choose( array ) );
-      } );
-
-      // @private the remaining y-intercepts are up for grabs
-      this.yIntercepts = _.flatten( yInterceptArrays );
-    },
+  return inherit( BaseChallengeFactory, GSIChallengeFactory1, {
 
     /**
      * Creates challenges for this game level.
@@ -75,28 +40,24 @@ define( function( require ) {
      */
     createChallenges: function() {
 
-      this.initializePools();
+      // pools of values for slope and y-intercept
+      var slopePool = new ValuePool( this.createSlopeArrays() );
+      var yInterceptPool = new ValuePool( this.createYInterceptArrays() );
 
       var challenges = [];
-      var slope;
-      var yIntercept;
 
       if ( phet.joist.random.nextBoolean() ) {
 
         // CHALLENGE 1
-        slope = this.chooseRequiredSlope();
-        yIntercept = this.chooseYIntercept();
         challenges.push( new GraphTheLine( 'required slope, slope variable',
-          Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+          this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.SLOPE,
           this.xRange, this.yRange ) );
 
         // CHALLENGE 2
-        slope = this.chooseSlope();
-        yIntercept = this.chooseYIntercept();
         challenges.push( new MakeTheEquation( 'y-intercept variable',
-          Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+          this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.INTERCEPT,
           this.xRange, this.yRange ) );
@@ -104,65 +65,53 @@ define( function( require ) {
       else {
 
         // CHALLENGE 1
-        slope = this.chooseSlope();
-        yIntercept = this.chooseYIntercept();
         challenges.push( new GraphTheLine( 'y-intercept variable',
-          Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+          this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.INTERCEPT,
           this.xRange, this.yRange ) );
 
         // CHALLENGE 2
-        slope = this.chooseRequiredSlope();
-        yIntercept = this.chooseYIntercept();
         challenges.push( new MakeTheEquation( 'required slope, slope variable',
-          Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+          this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.SLOPE,
           this.xRange, this.yRange ) );
       }
 
       // CHALLENGE 3
-      slope = this.chooseRequiredSlope();
-      yIntercept = this.chooseYIntercept();
       challenges.push( new GraphTheLine( 'required slope, slope variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 4
-      slope = this.chooseSlope();
-      yIntercept = this.chooseRequiredYIntercept();
       challenges.push( new GraphTheLine( 'required y-intercept, y-intercept variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 5
-      slope = this.chooseRequiredSlope();
-      yIntercept = this.chooseYIntercept();
       challenges.push( new MakeTheEquation( 'required slope, slope variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 6
-      slope = this.chooseSlope();
-      yIntercept = this.chooseRequiredYIntercept();
       challenges.push( new MakeTheEquation( 'required y-intercept, y-intercept variable',
-        Line.createSlopeIntercept( slope.numerator, slope.denominator, yIntercept ),
+        this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.INTERCEPT,
         this.xRange, this.yRange ) );
 
-      assert && assert( this.requiredSlopes.length === 0, 'some required slope was not used' );
-      assert && assert( this.requiredYIntercepts.length === 0, 'some required y-intercept was not used' );
+      assert && assert( slopePool.isEmpty(), 'some required slope was not used' );
+      assert && assert( yInterceptPool.isEmpty(), 'some required y-intercept was not used' );
 
       // shuffle and return
-      return GSIChallengeFactory.shuffle( challenges );
+      return this.shuffle( challenges );
     },
 
     /**
@@ -187,41 +136,9 @@ define( function( require ) {
       var yRangeSubset = new Range( -6, 4 );
       assert && assert( this.yRange.containsRange( yRangeSubset ), 'values are out of range' );
       return [
-        GSIChallengeFactory.rangeToArray( new Range( yRangeSubset.min, -1 ) ),
-        GSIChallengeFactory.rangeToArray( new Range( 1, yRangeSubset.max ) )
+        ValuePool.rangeToArray( new Range( yRangeSubset.min, -1 ) ),
+        ValuePool.rangeToArray( new Range( 1, yRangeSubset.max ) )
       ];
-    },
-
-    /**
-     * @protected
-     * @returns {Fraction}
-     */
-    chooseRequiredSlope: function() {
-      return GSIChallengeFactory.choose( this.requiredSlopes );
-    },
-
-    /**
-     * @protected
-     * @returns {Fraction}
-     */
-    chooseSlope: function() {
-      return GSIChallengeFactory.choose( this.slopes );
-    },
-
-    /**
-     * @protected
-     * @returns {number}
-     */
-    chooseRequiredYIntercept: function() {
-      return GSIChallengeFactory.choose( this.requiredYIntercepts );
-    },
-
-    /**
-     * @protected
-     * @returns {number}
-     */
-    chooseYIntercept: function() {
-      return GSIChallengeFactory.choose( this.yIntercepts );
     }
   } );
 } );
