@@ -34,11 +34,12 @@ define( function( require ) {
      * Level 2 has a different set of possible slopes, so override this function.
      * Creates the sets of slopes used for generating challenges.
      * @returns {Fraction[][]}
-     * @public
+     * @protected
      * @override
      */
     createSlopeArrays: function() {
       return [
+
         // positive and negative integers
         [
           new Fraction( 1, 1 ),
@@ -52,8 +53,25 @@ define( function( require ) {
           new Fraction( -4, 1 ),
           new Fraction( -5, 1 )
         ],
+
         // positive fractions
-        this.createPositiveFractionalSlopes(),
+        [
+          new Fraction( 1, 4 ),
+          new Fraction( 1, 5 ),
+          new Fraction( 1, 6 ),
+          new Fraction( 1, 7 ),
+          new Fraction( 2, 5 ),
+          new Fraction( 3, 5 ),
+          new Fraction( 2, 7 ),
+          new Fraction( 3, 7 ),
+          new Fraction( 4, 7 ),
+          new Fraction( 5, 2 ),
+          new Fraction( 3, 2 ),
+          new Fraction( 7, 2 ),
+          new Fraction( 7, 3 ),
+          new Fraction( 7, 4 )
+        ],
+
         // negative fractions
         [
           new Fraction( -1, 2 ),
@@ -71,31 +89,6 @@ define( function( require ) {
           new Fraction( -5, 3 ),
           new Fraction( -5, 4 )
         ]
-      ];
-    },
-
-    /**
-     * Creates the set of positive fractional slopes that are identified in the Graphing Lines design document.
-     * @returns {Fraction[]}
-     * @protected
-     */
-    createPositiveFractionalSlopes: function() {
-      return [
-        // positive fractions
-        new Fraction( 1, 4 ),
-        new Fraction( 1, 5 ),
-        new Fraction( 1, 6 ),
-        new Fraction( 1, 7 ),
-        new Fraction( 2, 5 ),
-        new Fraction( 3, 5 ),
-        new Fraction( 2, 7 ),
-        new Fraction( 3, 7 ),
-        new Fraction( 4, 7 ),
-        new Fraction( 5, 2 ),
-        new Fraction( 3, 2 ),
-        new Fraction( 7, 2 ),
-        new Fraction( 7, 3 ),
-        new Fraction( 7, 4 )
       ];
     },
 

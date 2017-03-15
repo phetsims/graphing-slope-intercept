@@ -32,9 +32,10 @@ define( function( require ) {
   return inherit( GSIChallengeFactory3, GSIChallengeFactory4, {
 
     /**
-     * Creates place-the-point challenges for this level.
+     * Level 4 has a different set of place-the-point challenges, so override this function.
      * @returns {PlaceThePoints[]}
      * @protected
+     * @override
      */
     createPlaceThePointChallenges: function() {
 
