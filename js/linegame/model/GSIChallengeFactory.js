@@ -13,6 +13,7 @@ define( function( require ) {
   var GLQueryParameters = require( 'GRAPHING_LINES/common/GLQueryParameters' );
   var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Util = require( 'DOT/Util' );
 
   /**
    * @param {Object} [options]
@@ -104,6 +105,8 @@ define( function( require ) {
      * @static
      */
     rangeToArray: function( range, options ) {
+
+      assert && assert( Util.isInteger( range.min ) && Util.isInteger( range.max ) );
 
       options = _.extend( {
         excludeZero: false // {boolean} whether to exclude zero from the array
