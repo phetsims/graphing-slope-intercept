@@ -16,7 +16,7 @@ define( function( require ) {
   var GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
-  var ValuePool = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ValuePool' );
+  var ValuePool = require( 'GRAPHING_LINES/linegame/model/ValuePool' );
 
   /**
    * @param {Object} [options]

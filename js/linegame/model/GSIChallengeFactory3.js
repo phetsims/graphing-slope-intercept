@@ -21,7 +21,7 @@ define( function( require ) {
   var ManipulationMode = require( 'GRAPHING_LINES/linegame/model/ManipulationMode' );
   var PlaceThePoints = require( 'GRAPHING_LINES/linegame/model/PlaceThePoints' );
   var Range = require( 'DOT/Range' );
-  var ValuePool = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ValuePool' );
+  var ValuePool = require( 'GRAPHING_LINES/linegame/model/ValuePool' );
 
   /**
    * @param {Object} [options]

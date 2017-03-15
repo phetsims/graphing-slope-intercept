@@ -17,7 +17,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'GRAPHING_LINES/common/model/Line' );
   var PlaceThePoints = require( 'GRAPHING_LINES/linegame/model/PlaceThePoints' );
-  var ValuePool = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/ValuePool' );
+  var ValuePool = require( 'GRAPHING_LINES/linegame/model/ValuePool' );
 
   /**
    * @param {Object} [options]
