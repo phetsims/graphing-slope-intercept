@@ -77,7 +77,7 @@ define( function( require ) {
     /**
      * Creates the set of positive fractional slopes that are identified in the Graphing Lines design document.
      * @returns {Fraction[]}
-     * @public
+     * @protected
      */
     createPositiveFractionalSlopes: function() {
       return [
