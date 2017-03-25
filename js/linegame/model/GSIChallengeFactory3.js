@@ -50,28 +50,32 @@ define( function( require ) {
       var challenges = [];
 
       // CHALLENGE 1
-      challenges.push( new GraphTheLine( 'required y-intercept, slope and intercept variable',
+      challenges.push( new GraphTheLine(
+        '1: GraphTheLine, required y-intercept, slope and intercept variable',
         this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 2
-      challenges.push( new GraphTheLine( 'required slope, slope and intercept variable',
+      challenges.push( new GraphTheLine(
+        '2: GraphTheLine, required slope, slope and intercept variable',
         this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 3
-      challenges.push( new MakeTheEquation( 'required slope, required y-intercept, slope and intercept variable',
+      challenges.push( new MakeTheEquation(
+        '3: MakeTheEquation, required slope, required y-intercept, slope and intercept variable',
         this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 4
-      challenges.push( new MakeTheEquation( 'required slope, slope and intercept variable',
+      challenges.push( new MakeTheEquation(
+        '4: MakeTheEquation, required slope, slope and intercept variable',
         this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE_INTERCEPT,
@@ -110,7 +114,8 @@ define( function( require ) {
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
         run = ValuePool.choose( runList );
       }
-      challenges.push( new PlaceThePoints( 'random points, integer y-intercept',
+      challenges.push( new PlaceThePoints(
+        '5: PlaceThePoints, random points, integer y-intercept',
         new Line( x1, y1, x1 + run, y1 + rise ),
         EquationForm.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );
@@ -122,7 +127,8 @@ define( function( require ) {
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
         run = ValuePool.choose( runList );
       }
-      challenges.push( new PlaceThePoints( 'random points, integer y-intercept',
+      challenges.push( new PlaceThePoints(
+        '6: PlaceThePoints, random points, integer y-intercept',
         new Line( x1, y1, x1 + run, y1 + rise ),
         EquationForm.SLOPE_INTERCEPT,
         this.xRange, this.yRange ) );

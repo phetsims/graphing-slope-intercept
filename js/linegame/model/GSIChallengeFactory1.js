@@ -49,14 +49,16 @@ define( function( require ) {
       if ( phet.joist.random.nextBoolean() ) {
 
         // CHALLENGE 1
-        challenges.push( new GraphTheLine( 'required slope, slope variable',
+        challenges.push( new GraphTheLine(
+          '1: GraphTheLine, required slope, slope variable',
           this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.SLOPE,
           this.xRange, this.yRange ) );
 
         // CHALLENGE 2
-        challenges.push( new MakeTheEquation( 'y-intercept variable',
+        challenges.push( new MakeTheEquation(
+          '2: MakeTheEquation, y-intercept variable',
           this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.INTERCEPT,
@@ -65,14 +67,16 @@ define( function( require ) {
       else {
 
         // CHALLENGE 1
-        challenges.push( new GraphTheLine( 'y-intercept variable',
+        challenges.push( new GraphTheLine(
+          '1: GraphTheLine, y-intercept variable',
           this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.INTERCEPT,
           this.xRange, this.yRange ) );
 
         // CHALLENGE 2
-        challenges.push( new MakeTheEquation( 'required slope, slope variable',
+        challenges.push( new MakeTheEquation(
+          '2: MakeTheEquation, required slope, slope variable',
           this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
           EquationForm.SLOPE_INTERCEPT,
           ManipulationMode.SLOPE,
@@ -80,28 +84,32 @@ define( function( require ) {
       }
 
       // CHALLENGE 3
-      challenges.push( new GraphTheLine( 'required slope, slope variable',
+      challenges.push( new GraphTheLine(
+        '3: GraphTheLine, required slope, slope variable',
         this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 4
-      challenges.push( new GraphTheLine( 'required y-intercept, y-intercept variable',
+      challenges.push( new GraphTheLine(
+        '4: GraphTheLine, required y-intercept, y-intercept variable',
         this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.INTERCEPT,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 5
-      challenges.push( new MakeTheEquation( 'required slope, slope variable',
+      challenges.push( new MakeTheEquation(
+        '5: MakeTheEquation, required slope, slope variable',
         this.createSlopeInterceptLine( slopePool.chooseRequired(), yInterceptPool.chooseOptional() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.SLOPE,
         this.xRange, this.yRange ) );
 
       // CHALLENGE 6
-      challenges.push( new MakeTheEquation( 'required y-intercept, y-intercept variable',
+      challenges.push( new MakeTheEquation(
+        '6: MakeTheEquation, required y-intercept, y-intercept variable',
         this.createSlopeInterceptLine( slopePool.chooseOptional(), yInterceptPool.chooseRequired() ),
         EquationForm.SLOPE_INTERCEPT,
         ManipulationMode.INTERCEPT,
