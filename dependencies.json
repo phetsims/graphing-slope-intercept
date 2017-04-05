@@ -1,72 +1,72 @@
 {
-  "comment": "# graphing-slope-intercept 1.0.0-dev.5 Fri Mar 24 2017 21:48:24 GMT-1000 (HST)",
+  "comment": "# graphing-slope-intercept 1.0.0-dev.5 Wed Apr 05 2017 09:08:07 GMT-0600 (MDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "axon": {
     "sha": "f7720d0e57be3884aedaa78bd799d1fac8168711",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "brand": {
-    "sha": "0be722ee4e70a5689a86a246e86651f1b844574d",
+    "sha": "054ca5c3825a9b6322b9fc6b2b2be8769a661d78",
     "branch": "master"
   },
   "chipper": {
-    "sha": "a3f44a2f74cccf8071a505539415228b8de25df1",
-    "branch": "master"
+    "sha": "52c3aa33c623df4a2ef2470e298c7f2382cb7dc7",
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "569939e1f45973234a3819255a88cd2b80006f76",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "graphing-lines": {
     "sha": "2333ca01e0f99a78e933b5aa082ad9de96714197",
     "branch": "master"
   },
   "graphing-slope-intercept": {
-    "sha": "1907b3de5478ea57ee56d761e6cdef78b423cfad",
+    "sha": "3f817700539105bd0660bcb68f542d97cb6015b6",
     "branch": "master"
   },
   "joist": {
-    "sha": "e9e4056af9b0515916ccb507a4e5129b70285bbe",
-    "branch": "master"
+    "sha": "c5a6310480e17578e6ecaa98c3e6a65aff2c76e7",
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "81166ce9735f0bcb11b9e68b74eeed46b6f24da6",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "phet-core": {
     "sha": "c5c6c2a8273b9bd3f3bcb4ddfbcf24058b58954a",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "c7cb85b649c2d22cad0d73acd7cb218b6a64d1c6",
-    "branch": "master"
+    "sha": "85801e7b43730588c1e2770fb64d633c58d71759",
+    "branch": "HEAD"
   },
   "query-string-machine": {
     "sha": "d8a4ff18a12aff003e4896213c1dfed5a79c1a30",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "scenery": {
-    "sha": "e24681a53ba4bb55a60662f65038e4ed8b41fdba",
-    "branch": "master"
+    "sha": "49e17a1d562459158af859be48357ae0ab00f60d",
+    "branch": "HEAD"
   },
   "scenery-phet": {
-    "sha": "e404e619dc35afa4b59b52f536a946c6d47d5f35",
-    "branch": "master"
+    "sha": "6213dc27544de739f31722d59f1a756e20ca03fb",
+    "branch": "HEAD"
   },
   "sherpa": {
     "sha": "3255de0f1edda165ff360076051a56cd31cd3ea5",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "sun": {
-    "sha": "28d0127c4a165551453e5c445319166ed2446981",
-    "branch": "master"
+    "sha": "bffd225eb8be0412385b8c542bcf8edc282fe31d",
+    "branch": "HEAD"
   },
   "tandem": {
     "sha": "a668abd5e2f1d6b80de925c9e7567c4468a34f3a",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "vegas": {
     "sha": "1e2b1b0c8fa2c4385c987447746575b10c5e9df6",
