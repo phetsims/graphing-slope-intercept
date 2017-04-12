@@ -23,16 +23,19 @@ define( function( require ) {
 
   /**                                                          
    * @param {Tandem} tandem
+   * @param {Object} [options]
    * @constructor
    */
-  function GSILineGameScreen( tandem ) {
+  function GSILineGameScreen( tandem, options ) {
 
-    var options = {
+    options = _.extend( {
       name: screenLineGameString,
       backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
-      homeScreenIcon: GLIconFactory.createGameScreenIcon(),
-      tandem: tandem
-    };
+      homeScreenIcon: GLIconFactory.createGameScreenIcon()
+    }, options );
+
+    assert && assert( !options.tandem, 'tandem is a constructor parameter' );
+    options.tandem = tandem;
 
     Screen.call( this,
       function() { return new GSILineGameModel(); },
