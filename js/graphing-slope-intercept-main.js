@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var GSILineGameScreen = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/GSILineGameScreen' );
+  var Property = require( 'AXON/Property' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var SlopeInterceptScreen = require( 'GRAPHING_LINES/slopeintercept/SlopeInterceptScreen' );
@@ -21,7 +22,7 @@ define( function( require ) {
   // constants
   var tandem = Tandem.createRootTandem();
 
-  var options = {
+  var simOptions = {
     credits: {
       leadDesign: 'Amanda McGarry, Ariel Paul',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
@@ -31,12 +32,16 @@ define( function( require ) {
     }
   };
 
+  var screenOptions = {
+    backgroundColorProperty: new Property( 'rgb( 226, 255, 249 )' ) // light blue-green
+  };
+
   SimLauncher.launch( function() {
     var screens = [
-      new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ) ),
-      new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ) )
+      new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ), screenOptions ),
+      new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ), screenOptions )
     ];
-    var sim = new Sim( graphingSlopeInterceptTitleString, screens, options );
+    var sim = new Sim( graphingSlopeInterceptTitleString, screens, simOptions );
     sim.start();
   } );
 } );
