@@ -26,12 +26,9 @@ define( function( require ) {
    */
   function GSILineGameScreenView( model ) {
 
-    // Grid of images for the level-selection buttons, ordered by level.
+    // A single row of level-selection buttons, ordered by level.
     // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
-    var levelImages = [
-      [ level1Image, level3Image ],
-      [ level5Image, level6Image ]
-    ];
+    var levelImages = [ [ level1Image, level3Image, level5Image, level6Image ] ];
 
     // functions that create nodes for the game reward, ordered by level
     var rewardFactoryFunctions = [
