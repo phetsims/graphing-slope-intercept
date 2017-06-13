@@ -26,7 +26,7 @@ define( function( require ) {
     credits: {
       leadDesign: 'Amanda McGarry, Ariel Paul',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Bryce Gruneich, Karina K. R. Hensberry, Patricia Loeblein,\nAmanda McGarry, Kathy Perkins',
+      team: 'Bryce Gruneich, Karina K. R. Hensberry, Patricia Loeblein, Kathy Perkins',
       graphicArts: 'Sharon Siman-Tov',
       qualityAssurance: 'Steele Dalton, Bryce Griebenow, Elise Morgan,\nOliver Orejola, Benjamin Roberts, Bryan Yoelin'
     }
