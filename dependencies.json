@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.1.0-rc.4 Tue Feb 19 2019 09:33:19 GMT-0700 (MST)",
+  "comment": "# graphing-slope-intercept 1.1.0 Wed Feb 20 2019 13:56:17 GMT-0700 (MST)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "444447089e8b30565ec2261c12e55d0f811adda3",
+    "sha": "c3d8d679ea06fed97610dd69064db071607ecec0",
     "branch": "1.1"
   },
   "joist": {
