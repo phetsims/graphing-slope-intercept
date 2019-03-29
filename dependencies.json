@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.1.1-rc.1 Thu Mar 28 2019 14:10:40 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# graphing-slope-intercept 1.1.1-rc.1 Thu Mar 28 2019 23:07:26 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -9,12 +9,12 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "b195e221428e3598360768dd286dfc5a84f205ec",
-    "branch": "HEAD"
+    "sha": "ea6a8f887423920b7411adcdc41424b36860d525",
+    "branch": "graphing-slope-intercept-1.1"
   },
   "chipper": {
     "sha": "32987bc96441291fc7d3dab128d723b027160b37",
-    "branch": "graphing-slope-intercept-1.1"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "782f9d54fb356c7f1d29ee4449f2e866de3d1717",
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "61fe64429e8f58ea8fc138bb4fb57d8109afacbb",
+    "sha": "5e307bbfab1ab1d28dc5d2e42521f4ffd7d47b5b",
     "branch": "1.1"
   },
   "joist": {
