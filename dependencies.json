@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.1.2 Wed Apr 24 2019 16:02:48 GMT-0800 (Alaskan Daylight Time)",
+  "comment": "# graphing-slope-intercept 1.1.2 Fri May 24 2019 14:52:07 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -13,8 +13,8 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "aa17cbe4af57c2190aca54653e8518de4aba36a0",
-    "branch": "HEAD"
+    "sha": "72c54a9e7f94a8477f1f5b55c1195da3f312f6a6",
+    "branch": "graphing-slope-intercept-1.1"
   },
   "dot": {
     "sha": "782f9d54fb356c7f1d29ee4449f2e866de3d1717",
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "ebc9bee604a5983099aca48af9a460b69bd8a97f",
+    "sha": "4317f261e1b160ea97b45906b9430ef9a0ada3d6",
     "branch": "1.1"
   },
   "joist": {
@@ -42,18 +42,6 @@
   },
   "phet-io": {
     "sha": "4566046207d6a4712b1b081ec2a0786bae6c44b9",
-    "branch": "HEAD"
-  },
-  "phet-io-wrapper-classroom-activity": {
-    "sha": "64aff78db6605aa5317724d50fdb28bd9cf495e2",
-    "branch": "HEAD"
-  },
-  "phet-io-wrapper-hookes-law-energy": {
-    "sha": "edb231a365b0b81c976f6e502874a234a0284915",
-    "branch": "HEAD"
-  },
-  "phet-io-wrapper-lab-book": {
-    "sha": "fb5c98c155259e2bdd37eb64e30081017a6e1d09",
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
