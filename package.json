@@ -13,8 +13,7 @@
     "requirejsNamespace": "GRAPHING_SLOPE_INTERCEPT",
     "phetLibs": [
       "graphing-lines",
-      "vegas",
-      "vibe"
+      "vegas"
     ],
     "runnable": true,
     "supportedBrands": [
