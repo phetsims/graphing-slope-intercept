@@ -5,20 +5,20 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var BaseGameScreenView = require( 'GRAPHING_LINES/linegame/view/BaseGameScreenView' );
-  var GLRewardNode = require( 'GRAPHING_LINES/linegame/view/GLRewardNode' );
-  var graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
-  var inherit = require( 'PHET_CORE/inherit' );
+  const BaseGameScreenView = require( 'GRAPHING_LINES/linegame/view/BaseGameScreenView' );
+  const GLRewardNode = require( 'GRAPHING_LINES/linegame/view/GLRewardNode' );
+  const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
+  const inherit = require( 'PHET_CORE/inherit' );
 
   // images
-  var level1Image = require( 'image!GRAPHING_LINES/Level_1.png' );
-  var level3Image = require( 'image!GRAPHING_LINES/Level_3.png' );
-  var level5Image = require( 'image!GRAPHING_LINES/Level_5.png' );
-  var level6Image = require( 'image!GRAPHING_LINES/Level_6.png' );
+  const level1Image = require( 'image!GRAPHING_LINES/Level_1.png' );
+  const level3Image = require( 'image!GRAPHING_LINES/Level_3.png' );
+  const level5Image = require( 'image!GRAPHING_LINES/Level_5.png' );
+  const level6Image = require( 'image!GRAPHING_LINES/Level_6.png' );
 
   /**
    * @param {LineGameModel} model

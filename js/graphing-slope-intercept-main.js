@@ -5,19 +5,19 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var GSILineGameScreen = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/GSILineGameScreen' );
-  var Property = require( 'AXON/Property' );
-  var Sim = require( 'JOIST/Sim' );
-  var SimLauncher = require( 'JOIST/SimLauncher' );
-  var SlopeInterceptScreen = require( 'GRAPHING_LINES/slopeintercept/SlopeInterceptScreen' );
-  var Tandem = require( 'TANDEM/Tandem' );
+  const GSILineGameScreen = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/GSILineGameScreen' );
+  const Property = require( 'AXON/Property' );
+  const Sim = require( 'JOIST/Sim' );
+  const SimLauncher = require( 'JOIST/SimLauncher' );
+  const SlopeInterceptScreen = require( 'GRAPHING_LINES/slopeintercept/SlopeInterceptScreen' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   // strings
-  var graphingSlopeInterceptTitleString = require( 'string!GRAPHING_SLOPE_INTERCEPT/graphing-slope-intercept.title' );
+  const graphingSlopeInterceptTitleString = require( 'string!GRAPHING_SLOPE_INTERCEPT/graphing-slope-intercept.title' );
 
   // constants
   var tandem = Tandem.rootTandem;
