@@ -23,7 +23,7 @@ define( require => {
   function GSILineGameModel() {
 
     // a challenge factory for each level
-    var challengeFactories = [
+    const challengeFactories = [
       new GSIChallengeFactory1(),
       new GSIChallengeFactory2(),
       new GSIChallengeFactory3(),

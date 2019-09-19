@@ -28,10 +28,10 @@ define( require => {
 
     // A single row of level-selection buttons, ordered by level.
     // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
-    var levelImages = [ [ level1Image, level3Image, level5Image, level6Image ] ];
+    const levelImages = [ [ level1Image, level3Image, level5Image, level6Image ] ];
 
     // functions that create nodes for the game reward, ordered by level
-    var rewardFactoryFunctions = [
+    const rewardFactoryFunctions = [
       GLRewardNode.createGraphNodes,
       GLRewardNode.createPointToolNodes,
       GLRewardNode.createPaperAirplaneNodes,

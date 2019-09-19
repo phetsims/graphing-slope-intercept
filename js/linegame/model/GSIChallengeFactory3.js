@@ -44,10 +44,10 @@ define( require => {
     createChallenges: function() {
 
       // pools of values for slope and y-intercept
-      var slopePool = new ValuePool( this.createSlopeArrays() );
-      var yInterceptPool = new ValuePool( this.createYInterceptArrays() );
+      const slopePool = new ValuePool( this.createSlopeArrays() );
+      const yInterceptPool = new ValuePool( this.createYInterceptArrays() );
 
-      var challenges = [];
+      let challenges = [];
 
       // CHALLENGE 1
       challenges.push( new GraphTheLine(
@@ -82,7 +82,7 @@ define( require => {
         this.xRange, this.yRange ) );
 
       // CHALLENGE 5 & 6
-      var placeThePointChallenges = this.createPlaceThePointChallenges();
+      const placeThePointChallenges = this.createPlaceThePointChallenges();
       challenges = challenges.concat( placeThePointChallenges );
 
       assert && assert( slopePool.isEmpty(), 'some required slope was not used' );
@@ -98,19 +98,19 @@ define( require => {
      */
     createPlaceThePointChallenges: function() {
 
-      var challenges = [];
+      const challenges = [];
 
-      var range = new Range( -5, 5 );
+      const range = new Range( -5, 5 );
       assert && assert( this.xRange.containsRange( range ) && this.yRange.containsRange( range ) );
-      var x1 = 0; // causes y-intercept to be an integer
-      var yList = ValuePool.rangeToArray( range );
-      var riseList = ValuePool.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
-      var runList = ValuePool.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
+      const x1 = 0; // causes y-intercept to be an integer
+      const yList = ValuePool.rangeToArray( range );
+      const riseList = ValuePool.rangeToArray( range, { excludeZero: true } ); // prevent zero slope
+      const runList = ValuePool.rangeToArray( range, { excludeZero: true } );  // prevent undefined slope
 
       // CHALLENGE 5
-      var y1 = ValuePool.choose( yList );
-      var rise = ValuePool.choose( riseList );
-      var run = ValuePool.choose( runList );
+      let y1 = ValuePool.choose( yList );
+      let rise = ValuePool.choose( riseList );
+      let run = ValuePool.choose( runList );
       if ( Math.abs( rise / run ) === 1 ) { // prevent unit slope
         run = ValuePool.choose( runList );
       }

@@ -41,10 +41,10 @@ define( require => {
     createChallenges: function() {
 
       // pools of values for slope and y-intercept
-      var slopePool = new ValuePool( this.createSlopeArrays() );
-      var yInterceptPool = new ValuePool( this.createYInterceptArrays() );
+      const slopePool = new ValuePool( this.createSlopeArrays() );
+      const yInterceptPool = new ValuePool( this.createYInterceptArrays() );
 
-      var challenges = [];
+      const challenges = [];
 
       if ( phet.joist.random.nextBoolean() ) {
 
@@ -140,7 +140,7 @@ define( require => {
      * @protected
      */
     createYInterceptArrays: function() {
-      var yRangeSubset = new Range( -6, 4 );
+      const yRangeSubset = new Range( -6, 4 );
       assert && assert( this.yRange.containsRange( yRangeSubset ), 'values are out of range' );
       return [
         ValuePool.rangeToArray( new Range( yRangeSubset.min, -1 ) ), // negative intercepts

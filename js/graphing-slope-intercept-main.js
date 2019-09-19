@@ -20,9 +20,9 @@ define( require => {
   const graphingSlopeInterceptTitleString = require( 'string!GRAPHING_SLOPE_INTERCEPT/graphing-slope-intercept.title' );
 
   // constants
-  var tandem = Tandem.rootTandem;
+  const tandem = Tandem.rootTandem;
 
-  var simOptions = {
+  const simOptions = {
     credits: {
       leadDesign: 'Amanda McGarry, Ariel Paul',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
@@ -34,16 +34,16 @@ define( require => {
     }
   };
 
-  var screenOptions = {
+  const screenOptions = {
     backgroundColorProperty: new Property( 'rgb( 226, 255, 249 )' ) // light blue-green
   };
 
   SimLauncher.launch( function() {
-    var screens = [
+    const screens = [
       new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ), screenOptions ),
       new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ), screenOptions )
     ];
-    var sim = new Sim( graphingSlopeInterceptTitleString, screens, simOptions );
+    const sim = new Sim( graphingSlopeInterceptTitleString, screens, simOptions );
     sim.start();
   } );
 } );
