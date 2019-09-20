@@ -1,4 +1,4 @@
-// Copyright 2017, University of Colorado Boulder
+// Copyright 2017-2019, University of Colorado Boulder
 
 /**
  * The 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
