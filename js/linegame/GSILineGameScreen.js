@@ -15,6 +15,7 @@ define( require => {
   const GSILineGameModel = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSILineGameModel' );
   const GSILineGameScreenView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/GSILineGameScreenView' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Property = require( 'AXON/Property' );
   const Screen = require( 'JOIST/Screen' );
 
@@ -28,7 +29,7 @@ define( require => {
    */
   function GSILineGameScreen( tandem, options ) {
 
-    options = _.extend( {
+    options = merge( {
       name: screenLineGameString,
       backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
       homeScreenIcon: GLIconFactory.createGameScreenIcon()
