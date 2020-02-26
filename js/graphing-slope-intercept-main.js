@@ -1,4 +1,4 @@
-// Copyright 2017-2019, University of Colorado Boulder
+// Copyright 2017-2020, University of Colorado Boulder
 
 /**
  * Main entry point for the sim.
@@ -38,7 +38,7 @@ define( require => {
     backgroundColorProperty: new Property( 'rgb( 226, 255, 249 )' ) // light blue-green
   };
 
-  SimLauncher.launch( function() {
+  SimLauncher.launch( () => {
     const screens = [
       new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ), screenOptions ),
       new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ), screenOptions )

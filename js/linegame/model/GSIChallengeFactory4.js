@@ -1,4 +1,4 @@
-// Copyright 2017-2019, University of Colorado Boulder
+// Copyright 2017-2020, University of Colorado Boulder
 
 /**
  * Creates game challenges for Level 4 in the 'Graphing Slope-Intercept' sim.
@@ -14,22 +14,18 @@ define( require => {
   const EquationForm = require( 'GRAPHING_LINES/linegame/model/EquationForm' );
   const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   const GSIChallengeFactory3 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory3' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'GRAPHING_LINES/common/model/Line' );
   const PlaceThePoints = require( 'GRAPHING_LINES/linegame/model/PlaceThePoints' );
   const ValuePool = require( 'GRAPHING_LINES/linegame/model/ValuePool' );
 
-  /**
-   * @param {Object} [options]
-   * @constructor
-   */
-  function GSIChallengeFactory4( options ) {
-    GSIChallengeFactory3.call( this, options );
-  }
+  class GSIChallengeFactory4 extends GSIChallengeFactory3 {
 
-  graphingSlopeIntercept.register( 'GSIChallengeFactory4', GSIChallengeFactory4 );
-
-  return inherit( GSIChallengeFactory3, GSIChallengeFactory4, {
+    /**
+     * @param {Object} [options]
+     */
+    constructor( options ) {
+      super( options );
+    }
 
     /**
      * Level 4 has a different set of place-the-point challenges, so override this function.
@@ -37,7 +33,7 @@ define( require => {
      * @protected
      * @override
      */
-    createPlaceThePointChallenges: function() {
+    createPlaceThePointChallenges() {
 
       const challenges = [];
 
@@ -61,5 +57,7 @@ define( require => {
 
       return challenges;
     }
-  } );
+  }
+
+  return graphingSlopeIntercept.register( 'GSIChallengeFactory4', GSIChallengeFactory4 );
 } );

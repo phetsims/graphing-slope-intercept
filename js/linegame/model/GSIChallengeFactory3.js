@@ -1,4 +1,4 @@
-// Copyright 2017-2019, University of Colorado Boulder
+// Copyright 2017-2020, University of Colorado Boulder
 
 /**
  * Creates game challenges for Level 3 in the 'Graphing Slope-Intercept' sim.
@@ -15,7 +15,6 @@ define( require => {
   const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   const GraphTheLine = require( 'GRAPHING_LINES/linegame/model/GraphTheLine' );
   const GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'GRAPHING_LINES/common/model/Line' );
   const MakeTheEquation = require( 'GRAPHING_LINES/linegame/model/MakeTheEquation' );
   const ManipulationMode = require( 'GRAPHING_LINES/linegame/model/ManipulationMode' );
@@ -23,17 +22,14 @@ define( require => {
   const Range = require( 'DOT/Range' );
   const ValuePool = require( 'GRAPHING_LINES/linegame/model/ValuePool' );
 
-  /**
-   * @param {Object} [options]
-   * @constructor
-   */
-  function GSIChallengeFactory3( options ) {
-    GSIChallengeFactory2.call( this, options );
-  }
+  class GSIChallengeFactory3 extends GSIChallengeFactory2 {
 
-  graphingSlopeIntercept.register( 'GSIChallengeFactory3', GSIChallengeFactory3 );
-
-  return inherit( GSIChallengeFactory2, GSIChallengeFactory3, {
+    /**
+     * @param {Object} [options]
+     */
+    constructor( options ) {
+      super( options );
+    }
 
     /**
      * Creates challenges for this game level.
@@ -41,7 +37,7 @@ define( require => {
      * @public
      * @override
      */
-    createChallenges: function() {
+    createChallenges() {
 
       // pools of values for slope and y-intercept
       const slopePool = new ValuePool( this.createSlopeArrays() );
@@ -89,14 +85,14 @@ define( require => {
       assert && assert( yInterceptPool.isEmpty(), 'some required y-intercept was not used' );
 
       return challenges;
-    },
+    }
 
     /**
      * Creates place-the-point challenges for this level.
      * @returns {PlaceThePoints[]}
      * @protected
      */
-    createPlaceThePointChallenges: function() {
+    createPlaceThePointChallenges() {
 
       const challenges = [];
 
@@ -135,5 +131,7 @@ define( require => {
 
       return challenges;
     }
-  } );
+  }
+
+  return graphingSlopeIntercept.register( 'GSIChallengeFactory3', GSIChallengeFactory3 );
 } );

@@ -1,4 +1,4 @@
-// Copyright 2017-2019, University of Colorado Boulder
+// Copyright 2017-2020, University of Colorado Boulder
 
 /**
  * The 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
@@ -14,7 +14,6 @@ define( require => {
   const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   const GSILineGameModel = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSILineGameModel' );
   const GSILineGameScreenView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/GSILineGameScreenView' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const merge = require( 'PHET_CORE/merge' );
   const Property = require( 'AXON/Property' );
   const Screen = require( 'JOIST/Screen' );
@@ -22,29 +21,30 @@ define( require => {
   // strings
   const screenLineGameString = require( 'string!GRAPHING_LINES/screen.lineGame' );
 
-  /**                                                          
-   * @param {Tandem} tandem
-   * @param {Object} [options]
-   * @constructor
-   */
-  function GSILineGameScreen( tandem, options ) {
+  class GSILineGameScreen extends Screen {
 
-    options = merge( {
-      name: screenLineGameString,
-      backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
-      homeScreenIcon: GLIconFactory.createGameScreenIcon()
-    }, options );
+    /**
+     * @param {Tandem} tandem
+     * @param {Object} [options]
+     */
+    constructor( tandem, options ) {
 
-    assert && assert( !options.tandem, 'tandem is a constructor parameter' );
-    options.tandem = tandem;
+      options = merge( {
+        name: screenLineGameString,
+        backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
+        homeScreenIcon: GLIconFactory.createGameScreenIcon()
+      }, options );
 
-    Screen.call( this,
-      function() { return new GSILineGameModel(); },
-      function( model ) { return new GSILineGameScreenView( model ); },
-      options );
+      assert && assert( !options.tandem, 'tandem is a constructor parameter' );
+      options.tandem = tandem;
+
+      super(
+        () => new GSILineGameModel(),
+        model => new GSILineGameScreenView( model ),
+        options
+      );
+    }
   }
 
-  graphingSlopeIntercept.register( 'GSILineGameScreen', GSILineGameScreen );
-
-  return inherit( Screen, GSILineGameScreen );
+  return graphingSlopeIntercept.register( 'GSILineGameScreen', GSILineGameScreen );
 } );

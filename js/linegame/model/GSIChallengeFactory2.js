@@ -1,4 +1,4 @@
-// Copyright 2017-2019, University of Colorado Boulder
+// Copyright 2017-2020, University of Colorado Boulder
 
 /**
  * Creates game challenges for Level 2 in the 'Graphing Slope-Intercept' sim.
@@ -14,21 +14,17 @@ define( require => {
   const Fraction = require( 'PHETCOMMON/model/Fraction' );
   const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
   const GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Range = require( 'DOT/Range' );
   const ValuePool = require( 'GRAPHING_LINES/linegame/model/ValuePool' );
 
-  /**
-   * @param {Object} [options]
-   * @constructor
-   */
-  function GSIChallengeFactory2( options ) {
-    GSIChallengeFactory1.call( this, options );
-  }
+  class GSIChallengeFactory2 extends GSIChallengeFactory1 {
 
-  graphingSlopeIntercept.register( 'GSIChallengeFactory2', GSIChallengeFactory2 );
-
-  return inherit( GSIChallengeFactory1, GSIChallengeFactory2, {
+    /**
+     * @param {Object} [options]
+     */
+    constructor( options ) {
+      super( options );
+    }
 
     /**
      * Level 2 has a different set of possible slopes, so override this function.
@@ -37,7 +33,7 @@ define( require => {
      * @protected
      * @override
      */
-    createSlopeArrays: function() {
+    createSlopeArrays() {
       return [
 
         // positive and negative integers
@@ -90,7 +86,7 @@ define( require => {
           new Fraction( -5, 4 )
         ]
       ];
-    },
+    }
 
     /**
      * Level 2 has a different set of possible y-intercepts, so override this function.
@@ -99,11 +95,13 @@ define( require => {
      * @protected
      * @override
      */
-    createYInterceptArrays: function() {
+    createYInterceptArrays() {
       return [
         ValuePool.rangeToArray( new Range( this.yRange.min, -1 ) ), // negative intercepts
         ValuePool.rangeToArray( new Range( 1, this.yRange.max ) )   // positive intercepts
       ];
     }
-  } );
+  }
+
+  return graphingSlopeIntercept.register( 'GSIChallengeFactory2', GSIChallengeFactory2 );
 } );

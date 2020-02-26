@@ -15,26 +15,22 @@ define( require => {
   const GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
   const GSIChallengeFactory3 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory3' );
   const GSIChallengeFactory4 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory4' );
-  const inherit = require( 'PHET_CORE/inherit' );
 
-  /**
-   * @constructor
-   */
-  function GSILineGameModel() {
+  class GSILineGameModel extends BaseGameModel {
 
-    // a challenge factory for each level
-    const challengeFactories = [
-      new GSIChallengeFactory1(),
-      new GSIChallengeFactory2(),
-      new GSIChallengeFactory3(),
-      new GSIChallengeFactory4()
-    ];
+    constructor() {
 
-    BaseGameModel.call( this, challengeFactories );
+      // a challenge factory for each level
+      const challengeFactories = [
+        new GSIChallengeFactory1(),
+        new GSIChallengeFactory2(),
+        new GSIChallengeFactory3(),
+        new GSIChallengeFactory4()
+      ];
+
+      super( challengeFactories );
+    }
   }
 
-  graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );
-
-
-  return inherit( BaseGameModel, GSILineGameModel );
+  return graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );
 } );
