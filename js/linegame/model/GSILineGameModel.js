@@ -5,32 +5,29 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BaseGameModel = require( 'GRAPHING_LINES/linegame/model/BaseGameModel' );
-  const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
-  const GSIChallengeFactory1 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory1' );
-  const GSIChallengeFactory2 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory2' );
-  const GSIChallengeFactory3 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory3' );
-  const GSIChallengeFactory4 = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSIChallengeFactory4' );
+import BaseGameModel from '../../../../graphing-lines/js/linegame/model/BaseGameModel.js';
+import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
+import GSIChallengeFactory1 from './GSIChallengeFactory1.js';
+import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
+import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
+import GSIChallengeFactory4 from './GSIChallengeFactory4.js';
 
-  class GSILineGameModel extends BaseGameModel {
+class GSILineGameModel extends BaseGameModel {
 
-    constructor() {
+  constructor() {
 
-      // a challenge factory for each level
-      const challengeFactories = [
-        new GSIChallengeFactory1(),
-        new GSIChallengeFactory2(),
-        new GSIChallengeFactory3(),
-        new GSIChallengeFactory4()
-      ];
+    // a challenge factory for each level
+    const challengeFactories = [
+      new GSIChallengeFactory1(),
+      new GSIChallengeFactory2(),
+      new GSIChallengeFactory3(),
+      new GSIChallengeFactory4()
+    ];
 
-      super( challengeFactories );
-    }
+    super( challengeFactories );
   }
+}
 
-  return graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );
-} );
+graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );
+export default GSILineGameModel;

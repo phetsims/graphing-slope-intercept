@@ -5,45 +5,41 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const GSILineGameScreen = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/GSILineGameScreen' );
-  const Property = require( 'AXON/Property' );
-  const Sim = require( 'JOIST/Sim' );
-  const SimLauncher = require( 'JOIST/SimLauncher' );
-  const SlopeInterceptScreen = require( 'GRAPHING_LINES/slopeintercept/SlopeInterceptScreen' );
-  const Tandem = require( 'TANDEM/Tandem' );
+import Property from '../../axon/js/Property.js';
+import SlopeInterceptScreen from '../../graphing-lines/js/slopeintercept/SlopeInterceptScreen.js';
+import Sim from '../../joist/js/Sim.js';
+import SimLauncher from '../../joist/js/SimLauncher.js';
+import Tandem from '../../tandem/js/Tandem.js';
+import graphingSlopeInterceptStrings from './graphing-slope-intercept-strings.js';
+import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 
-  // strings
-  const graphingSlopeInterceptTitleString = require( 'string!GRAPHING_SLOPE_INTERCEPT/graphing-slope-intercept.title' );
+const graphingSlopeInterceptTitleString = graphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].title;
 
-  // constants
-  const tandem = Tandem.ROOT;
+// constants
+const tandem = Tandem.ROOT;
 
-  const simOptions = {
-    credits: {
-      leadDesign: 'Amanda McGarry, Ariel Paul',
-      softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Bryce Gruneich, Karina K. R. Hensberry, Patricia Loeblein, Kathy Perkins',
-      graphicArts: 'Megan Lai, Sharon Siman-Tov',
-      qualityAssurance: 'Steele Dalton, Alex Dornan, Bryce Griebenow, Ethan Johnson, Elise Morgan, Liam Mulhall, ' +
-                        'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Maggie Wiseman, Katie Woessner, ' +
-                        'Bryan Yoelin'
-    }
-  };
+const simOptions = {
+  credits: {
+    leadDesign: 'Amanda McGarry, Ariel Paul',
+    softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
+    team: 'Bryce Gruneich, Karina K. R. Hensberry, Patricia Loeblein, Kathy Perkins',
+    graphicArts: 'Megan Lai, Sharon Siman-Tov',
+    qualityAssurance: 'Steele Dalton, Alex Dornan, Bryce Griebenow, Ethan Johnson, Elise Morgan, Liam Mulhall, ' +
+                      'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Maggie Wiseman, Katie Woessner, ' +
+                      'Bryan Yoelin'
+  }
+};
 
-  const screenOptions = {
-    backgroundColorProperty: new Property( 'rgb( 226, 255, 249 )' ) // light blue-green
-  };
+const screenOptions = {
+  backgroundColorProperty: new Property( 'rgb( 226, 255, 249 )' ) // light blue-green
+};
 
-  SimLauncher.launch( () => {
-    const screens = [
-      new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ), screenOptions ),
-      new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ), screenOptions )
-    ];
-    const sim = new Sim( graphingSlopeInterceptTitleString, screens, simOptions );
-    sim.start();
-  } );
+SimLauncher.launch( () => {
+  const screens = [
+    new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ), screenOptions ),
+    new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ), screenOptions )
+  ];
+  const sim = new Sim( graphingSlopeInterceptTitleString, screens, simOptions );
+  sim.start();
 } );

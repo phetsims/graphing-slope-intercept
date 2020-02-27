@@ -5,46 +5,43 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const GLColors = require( 'GRAPHING_LINES/common/GLColors' );
-  const GLIconFactory = require( 'GRAPHING_LINES/common/view/GLIconFactory' );
-  const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
-  const GSILineGameModel = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/model/GSILineGameModel' );
-  const GSILineGameScreenView = require( 'GRAPHING_SLOPE_INTERCEPT/linegame/view/GSILineGameScreenView' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Property = require( 'AXON/Property' );
-  const Screen = require( 'JOIST/Screen' );
+import Property from '../../../axon/js/Property.js';
+import GLColors from '../../../graphing-lines/js/common/GLColors.js';
+import GLIconFactory from '../../../graphing-lines/js/common/view/GLIconFactory.js';
+import graphingLinesStrings from '../../../graphing-lines/js/graphing-lines-strings.js';
+import Screen from '../../../joist/js/Screen.js';
+import merge from '../../../phet-core/js/merge.js';
+import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
+import GSILineGameModel from './model/GSILineGameModel.js';
+import GSILineGameScreenView from './view/GSILineGameScreenView.js';
 
-  // strings
-  const screenLineGameString = require( 'string!GRAPHING_LINES/screen.lineGame' );
+const screenLineGameString = graphingLinesStrings.screen.lineGame;
 
-  class GSILineGameScreen extends Screen {
+class GSILineGameScreen extends Screen {
 
-    /**
-     * @param {Tandem} tandem
-     * @param {Object} [options]
-     */
-    constructor( tandem, options ) {
+  /**
+   * @param {Tandem} tandem
+   * @param {Object} [options]
+   */
+  constructor( tandem, options ) {
 
-      options = merge( {
-        name: screenLineGameString,
-        backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
-        homeScreenIcon: GLIconFactory.createGameScreenIcon()
-      }, options );
+    options = merge( {
+      name: screenLineGameString,
+      backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
+      homeScreenIcon: GLIconFactory.createGameScreenIcon()
+    }, options );
 
-      assert && assert( !options.tandem, 'tandem is a constructor parameter' );
-      options.tandem = tandem;
+    assert && assert( !options.tandem, 'tandem is a constructor parameter' );
+    options.tandem = tandem;
 
-      super(
-        () => new GSILineGameModel(),
-        model => new GSILineGameScreenView( model ),
-        options
-      );
-    }
+    super(
+      () => new GSILineGameModel(),
+      model => new GSILineGameScreenView( model ),
+      options
+    );
   }
+}
 
-  return graphingSlopeIntercept.register( 'GSILineGameScreen', GSILineGameScreen );
-} );
+graphingSlopeIntercept.register( 'GSILineGameScreen', GSILineGameScreen );
+export default GSILineGameScreen;

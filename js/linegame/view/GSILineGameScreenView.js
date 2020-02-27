@@ -5,42 +5,37 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BaseGameScreenView = require( 'GRAPHING_LINES/linegame/view/BaseGameScreenView' );
-  const GLRewardNode = require( 'GRAPHING_LINES/linegame/view/GLRewardNode' );
-  const graphingSlopeIntercept = require( 'GRAPHING_SLOPE_INTERCEPT/graphingSlopeIntercept' );
+import level1Image from '../../../../graphing-lines/images/Level_1_png.js';
+import level3Image from '../../../../graphing-lines/images/Level_3_png.js';
+import level5Image from '../../../../graphing-lines/images/Level_5_png.js';
+import level6Image from '../../../../graphing-lines/images/Level_6_png.js';
+import BaseGameScreenView from '../../../../graphing-lines/js/linegame/view/BaseGameScreenView.js';
+import GLRewardNode from '../../../../graphing-lines/js/linegame/view/GLRewardNode.js';
+import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 
-  // images
-  const level1Image = require( 'image!GRAPHING_LINES/Level_1.png' );
-  const level3Image = require( 'image!GRAPHING_LINES/Level_3.png' );
-  const level5Image = require( 'image!GRAPHING_LINES/Level_5.png' );
-  const level6Image = require( 'image!GRAPHING_LINES/Level_6.png' );
+class GSILineGameScreenView extends BaseGameScreenView {
 
-  class GSILineGameScreenView extends BaseGameScreenView {
+  /**
+   * @param {LineGameModel} model
+   */
+  constructor( model ) {
 
-    /**
-     * @param {LineGameModel} model
-     */
-    constructor( model ) {
+    // A single row of level-selection buttons, ordered by level.
+    // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
+    const levelImages = [ [ level1Image, level3Image, level5Image, level6Image ] ];
 
-      // A single row of level-selection buttons, ordered by level.
-      // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
-      const levelImages = [ [ level1Image, level3Image, level5Image, level6Image ] ];
+    // functions that create nodes for the game reward, ordered by level
+    const rewardFactoryFunctions = [
+      GLRewardNode.createGraphNodes,
+      GLRewardNode.createPointToolNodes,
+      GLRewardNode.createPaperAirplaneNodes,
+      GLRewardNode.createSmileyFaceNodes
+    ];
 
-      // functions that create nodes for the game reward, ordered by level
-      const rewardFactoryFunctions = [
-        GLRewardNode.createGraphNodes,
-        GLRewardNode.createPointToolNodes,
-        GLRewardNode.createPaperAirplaneNodes,
-        GLRewardNode.createSmileyFaceNodes
-      ];
-
-      super( model, levelImages, rewardFactoryFunctions );
-    }
+    super( model, levelImages, rewardFactoryFunctions );
   }
+}
 
-  return graphingSlopeIntercept.register( 'GSILineGameScreenView', GSILineGameScreenView );
-} );
+graphingSlopeIntercept.register( 'GSILineGameScreenView', GSILineGameScreenView );
+export default GSILineGameScreenView;
