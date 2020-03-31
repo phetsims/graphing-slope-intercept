@@ -11,7 +11,7 @@ import SlopeInterceptScreen from '../../graphing-lines/js/slopeintercept/SlopeIn
 import Sim from '../../joist/js/Sim.js';
 import SimLauncher from '../../joist/js/SimLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import graphingSlopeInterceptStrings from './graphing-slope-intercept-strings.js';
+import graphingSlopeInterceptStrings from './graphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 
 const graphingSlopeInterceptTitleString = graphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].title;
