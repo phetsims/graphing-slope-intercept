@@ -16,8 +16,6 @@ import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
 import GSILineGameModel from './model/GSILineGameModel.js';
 import GSILineGameScreenView from './view/GSILineGameScreenView.js';
 
-const screenLineGameString = graphingLinesStrings.screen.lineGame;
-
 class GSILineGameScreen extends Screen {
 
   /**
@@ -27,7 +25,7 @@ class GSILineGameScreen extends Screen {
   constructor( tandem, options ) {
 
     options = merge( {
-      name: screenLineGameString,
+      name: graphingLinesStrings.screen.lineGame,
       backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
       homeScreenIcon: GLIconFactory.createGameScreenIcon()
     }, options );

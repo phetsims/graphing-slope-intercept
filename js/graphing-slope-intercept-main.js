@@ -14,11 +14,6 @@ import Tandem from '../../tandem/js/Tandem.js';
 import graphingSlopeInterceptStrings from './graphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 
-const graphingSlopeInterceptTitleString = graphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].title;
-
-// constants
-const tandem = Tandem.ROOT;
-
 const simOptions = {
   credits: {
     leadDesign: 'Amanda McGarry, Ariel Paul',
@@ -37,9 +32,9 @@ const screenOptions = {
 
 SimLauncher.launch( () => {
   const screens = [
-    new SlopeInterceptScreen( tandem.createTandem( 'slopeInterceptScreen' ), screenOptions ),
-    new GSILineGameScreen( tandem.createTandem( 'lineGSILineGameScreen' ), screenOptions )
+    new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), screenOptions ),
+    new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), screenOptions )
   ];
-  const sim = new Sim( graphingSlopeInterceptTitleString, screens, simOptions );
+  const sim = new Sim( graphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].title, screens, simOptions );
   sim.start();
 } );
