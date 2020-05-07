@@ -9,7 +9,7 @@
 import Property from '../../axon/js/Property.js';
 import SlopeInterceptScreen from '../../graphing-lines/js/slopeintercept/SlopeInterceptScreen.js';
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import graphingSlopeInterceptStrings from './graphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
@@ -30,7 +30,7 @@ const screenOptions = {
   backgroundColorProperty: new Property( 'rgb( 226, 255, 249 )' ) // light blue-green
 };
 
-SimLauncher.launch( () => {
+simLauncher.launch( () => {
   const screens = [
     new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), screenOptions ),
     new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), screenOptions )
