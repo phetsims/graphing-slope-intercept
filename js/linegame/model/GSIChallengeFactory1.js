@@ -6,6 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import dotRandom from '../../../../dot/js/dotRandom.js';
 import Range from '../../../../dot/js/Range.js';
 import BaseChallengeFactory from '../../../../graphing-lines/js/linegame/model/BaseChallengeFactory.js';
 import EquationForm from '../../../../graphing-lines/js/linegame/model/EquationForm.js';
@@ -39,7 +40,7 @@ class GSIChallengeFactory1 extends BaseChallengeFactory {
 
     const challenges = [];
 
-    if ( phet.joist.random.nextBoolean() ) {
+    if ( dotRandom.nextBoolean() ) {
 
       // CHALLENGE 1
       challenges.push( new GraphTheLine(
