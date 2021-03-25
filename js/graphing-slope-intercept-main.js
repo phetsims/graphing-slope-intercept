@@ -21,7 +21,7 @@ const simOptions = {
     team: 'Bryce Gruneich, Karina K. R. Hensberry, Patricia Loeblein, Kathy Perkins',
     graphicArts: 'Megan Lai, Sharon Siman-Tov',
     qualityAssurance: 'Steele Dalton, Alex Dornan, Bryce Griebenow, Ethan Johnson, Elise Morgan, Liam Mulhall, ' +
-                      'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Maggie Wiseman, Katie Woessner, ' +
+                      'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Maggie Wiseman, Kathryn Woessner, ' +
                       'Bryan Yoelin'
   }
 };
