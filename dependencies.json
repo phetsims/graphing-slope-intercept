@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.1.10-rc.1 Sat May 08 2021 22:19:44 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# graphing-slope-intercept 1.1.10-rc.1 Mon May 10 2021 15:24:14 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "24781d746e1adb6fa5b7a17c2820bf7836c019e2",
+    "sha": "1b7018482995d0c604cc8b6f8766e1bee1d1a104",
     "branch": "1.1"
   },
   "joist": {
@@ -54,15 +54,15 @@
   },
   "phetmarks": {
     "sha": "155fb5f8d4b246e2ad73d064635d72bbbda3a0eb",
-    "branch": "graphing-slope-intercept-1.1"
+    "branch": "HEAD"
   },
   "query-string-machine": {
     "sha": "e47329ccba50671352daf74eb8de1b7b7d80da48",
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "7211d3c43afd6e123dd1e80c380a903645f92a5a",
-    "branch": "HEAD"
+    "sha": "c2cf2ecbae6a80c70290be99275af94de0a2ac39",
+    "branch": "graphing-slope-intercept-1.1"
   },
   "scenery-phet": {
     "sha": "4d9e6213795ecea61d97273025f492231949728d",
