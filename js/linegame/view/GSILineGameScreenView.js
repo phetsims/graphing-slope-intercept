@@ -6,10 +6,10 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import level1Image from '../../../../graphing-lines/images/level1_png.js';
-import level3Image from '../../../../graphing-lines/images/level3_png.js';
-import level5Image from '../../../../graphing-lines/images/level5_png.js';
-import level6Image from '../../../../graphing-lines/images/level6_png.js';
+import level1_png from '../../../../graphing-lines/images/level1_png.js';
+import level3_png from '../../../../graphing-lines/images/level3_png.js';
+import level5_png from '../../../../graphing-lines/images/level5_png.js';
+import level6_png from '../../../../graphing-lines/images/level6_png.js';
 import BaseGameScreenView from '../../../../graphing-lines/js/linegame/view/BaseGameScreenView.js';
 import GLRewardNode from '../../../../graphing-lines/js/linegame/view/GLRewardNode.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
@@ -23,7 +23,7 @@ class GSILineGameScreenView extends BaseGameScreenView {
 
     // A single row of level-selection buttons, ordered by level.
     // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
-    const levelImages = [ [ level1Image, level3Image, level5Image, level6Image ] ];
+    const levelImages = [ [ level1_png, level3_png, level5_png, level6_png ] ];
 
     // functions that create nodes for the game reward, ordered by level
     const rewardFactoryFunctions = [
