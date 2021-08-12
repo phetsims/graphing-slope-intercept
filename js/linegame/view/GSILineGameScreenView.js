@@ -6,10 +6,10 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import level1Image from '../../../../graphing-lines/images/Level_1_png.js';
-import level3Image from '../../../../graphing-lines/images/Level_3_png.js';
-import level5Image from '../../../../graphing-lines/images/Level_5_png.js';
-import level6Image from '../../../../graphing-lines/images/Level_6_png.js';
+import level1Image from '../../../../graphing-lines/images/level1_png.js';
+import level3Image from '../../../../graphing-lines/images/level3_png.js';
+import level5Image from '../../../../graphing-lines/images/level5_png.js';
+import level6Image from '../../../../graphing-lines/images/level6_png.js';
 import BaseGameScreenView from '../../../../graphing-lines/js/linegame/view/BaseGameScreenView.js';
 import GLRewardNode from '../../../../graphing-lines/js/linegame/view/GLRewardNode.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
