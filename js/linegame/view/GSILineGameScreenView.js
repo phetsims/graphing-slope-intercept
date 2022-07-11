@@ -21,9 +21,9 @@ class GSILineGameScreenView extends BaseGameScreenView {
    */
   constructor( model ) {
 
-    // A single row of level-selection buttons, ordered by level.
-    // Uses level images from graphing-lines, assigns them to different levels than their file names indicate.
-    const levelImages = [ [ level1_png, level3_png, level5_png, level6_png ] ];
+    // Images for the level-selection buttons, ordered by level. Note that this reuses images from graphing-lines,
+    // but assigns them to different levels than their file names indicate.
+    const levelImages = [ level1_png, level3_png, level5_png, level6_png ];
 
     // functions that create nodes for the game reward, ordered by level
     const rewardFactoryFunctions = [
