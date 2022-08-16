@@ -5,11 +5,13 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
+import TReadOnlyProperty from '../../axon/js/TReadOnlyProperty.js';
 import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 
 type StringsType = {
   'graphing-slope-intercept': {
     'title': string;
+    'titleProperty': TReadOnlyProperty<string>;
   }
 };
 
