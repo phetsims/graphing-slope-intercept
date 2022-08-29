@@ -11,7 +11,7 @@ import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 type StringsType = {
   'graphing-slope-intercept': {
     'title': string;
-    'titleProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': TReadOnlyProperty<string>;
   }
 };
 
