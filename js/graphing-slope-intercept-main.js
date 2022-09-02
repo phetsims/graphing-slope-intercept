@@ -35,6 +35,6 @@ simLauncher.launch( () => {
     new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), screenOptions ),
     new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), screenOptions )
   ];
-  const sim = new Sim( graphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].title, screens, simOptions );
+  const sim = new Sim( graphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].titleStringProperty, screens, simOptions );
   sim.start();
 } );
