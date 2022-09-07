@@ -15,8 +15,8 @@ type StringsType = {
   }
 };
 
-const graphingSlopeInterceptStrings = getStringModule( 'GRAPHING_SLOPE_INTERCEPT' ) as StringsType;
+const GraphingSlopeInterceptStrings = getStringModule( 'GRAPHING_SLOPE_INTERCEPT' ) as StringsType;
 
-graphingSlopeIntercept.register( 'graphingSlopeInterceptStrings', graphingSlopeInterceptStrings );
+graphingSlopeIntercept.register( 'GraphingSlopeInterceptStrings', GraphingSlopeInterceptStrings );
 
-export default graphingSlopeInterceptStrings;
+export default GraphingSlopeInterceptStrings;

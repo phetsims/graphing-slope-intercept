@@ -9,7 +9,7 @@
 import Property from '../../../axon/js/Property.js';
 import GLColors from '../../../graphing-lines/js/common/GLColors.js';
 import GLIconFactory from '../../../graphing-lines/js/common/view/GLIconFactory.js';
-import graphingLinesStrings from '../../../graphing-lines/js/graphingLinesStrings.js';
+import GraphingLinesStrings from '../../../graphing-lines/js/GraphingLinesStrings.js';
 import Screen from '../../../joist/js/Screen.js';
 import merge from '../../../phet-core/js/merge.js';
 import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
@@ -25,7 +25,7 @@ class GSILineGameScreen extends Screen {
   constructor( tandem, options ) {
 
     options = merge( {
-      name: graphingLinesStrings.screen.lineGame,
+      name: GraphingLinesStrings.screen.lineGame,
       backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
       homeScreenIcon: GLIconFactory.createGameScreenIcon()
     }, options );
