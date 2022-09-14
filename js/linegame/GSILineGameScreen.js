@@ -25,7 +25,7 @@ class GSILineGameScreen extends Screen {
   constructor( tandem, options ) {
 
     options = merge( {
-      name: GraphingLinesStrings.screen.lineGame,
+      name: GraphingLinesStrings.screen.lineGameStringProperty,
       backgroundColorProperty: new Property( GLColors.SCREEN_BACKGROUND ),
       homeScreenIcon: GLIconFactory.createGameScreenIcon()
     }, options );
