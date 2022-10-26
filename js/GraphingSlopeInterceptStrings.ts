@@ -10,7 +10,6 @@ import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 
 type StringsType = {
   'graphing-slope-intercept': {
-    'title': string;
     'titleStringProperty': LinkableProperty<string>;
   }
 };
