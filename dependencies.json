@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.1.13 Wed Dec 14 2022 10:55:42 GMT-0700 (Mountain Standard Time)",
+  "comment": "# graphing-slope-intercept 1.1.14-rc.1 Wed Dec 14 2022 20:39:50 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "90e36fd226938be64855a03c549deb685b92de40",
+    "sha": "e8475ba5e0b864a35dd0654a2c2eb401ab6f9639",
     "branch": "1.1"
   },
   "joist": {
