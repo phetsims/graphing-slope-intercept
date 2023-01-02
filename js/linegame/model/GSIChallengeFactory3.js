@@ -1,5 +1,6 @@
 // Copyright 2017-2020, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Creates game challenges for Level 3 in the 'Graphing Slope-Intercept' sim.
  * Uses the same sets of slopes and y-intercepts as Level 2, but generates different challenges.

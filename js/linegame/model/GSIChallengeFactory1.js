@@ -1,5 +1,6 @@
 // Copyright 2017-2021, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Creates game challenges for Level 1 in the 'Graphing Slope-Intercept' sim.
  *

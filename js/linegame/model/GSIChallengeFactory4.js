@@ -1,5 +1,6 @@
 // Copyright 2017-2020, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Creates game challenges for Level 4 in the 'Graphing Slope-Intercept' sim.
  * Identical to level 3, except with different Place-the-Point challenges.
