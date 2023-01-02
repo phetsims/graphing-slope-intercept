@@ -18,7 +18,7 @@ import ManipulationMode from '../../../../graphing-lines/js/linegame/model/Manip
 import PlaceThePoints from '../../../../graphing-lines/js/linegame/model/PlaceThePoints.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
-import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
+import GSIChallengeFactory2 from './GSIChallengeFactory2.ts';
 
 class GSIChallengeFactory3 extends GSIChallengeFactory2 {
 

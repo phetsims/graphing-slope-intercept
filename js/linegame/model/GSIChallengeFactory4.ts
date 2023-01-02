@@ -14,7 +14,7 @@ import EquationForm from '../../../../graphing-lines/js/linegame/model/EquationF
 import PlaceThePoints from '../../../../graphing-lines/js/linegame/model/PlaceThePoints.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
-import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
+import GSIChallengeFactory3 from './GSIChallengeFactory3.ts';
 
 class GSIChallengeFactory4 extends GSIChallengeFactory3 {
 

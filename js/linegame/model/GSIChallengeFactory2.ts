@@ -13,7 +13,7 @@ import Range from '../../../../dot/js/Range.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import Fraction from '../../../../phetcommon/js/model/Fraction.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
-import GSIChallengeFactory1 from './GSIChallengeFactory1.js';
+import GSIChallengeFactory1 from './GSIChallengeFactory1.ts';
 
 class GSIChallengeFactory2 extends GSIChallengeFactory1 {
 
