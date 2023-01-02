@@ -1,5 +1,6 @@
 // Copyright 2017-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * View for the 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
  *
