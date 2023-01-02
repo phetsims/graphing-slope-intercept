@@ -1,6 +1,5 @@
 // Copyright 2017-2020, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Model for the 'Line Game' screen in the 'Graphing Slope-Intercept' sim.
  *
@@ -14,9 +13,9 @@ import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
 import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
 import GSIChallengeFactory4 from './GSIChallengeFactory4.js';
 
-class GSILineGameModel extends BaseGameModel {
+export default class GSILineGameModel extends BaseGameModel {
 
-  constructor() {
+  public constructor() {
 
     // a challenge factory for each level
     const challengeFactories = [
@@ -31,4 +30,3 @@ class GSILineGameModel extends BaseGameModel {
 }
 
 graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );
-export default GSILineGameModel;
