@@ -1,6 +1,5 @@
 // Copyright 2017-2020, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Creates game challenges for Level 4 in the 'Graphing Slope-Intercept' sim.
  * Identical to level 3, except with different Place-the-Point challenges.
@@ -14,29 +13,23 @@ import EquationForm from '../../../../graphing-lines/js/linegame/model/EquationF
 import PlaceThePoints from '../../../../graphing-lines/js/linegame/model/PlaceThePoints.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
-import GSIChallengeFactory3 from './GSIChallengeFactory3.ts';
+import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
 
-class GSIChallengeFactory4 extends GSIChallengeFactory3 {
+export default class GSIChallengeFactory4 extends GSIChallengeFactory3 {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
-    super( options );
+  public constructor() {
+    super();
   }
 
   /**
    * Level 4 has a different set of place-the-point challenges, so override this function.
-   * @returns {PlaceThePoints[]}
-   * @protected
-   * @override
    */
-  createPlaceThePointChallenges() {
+  protected override createPlaceThePointChallenges(): PlaceThePoints[] {
 
-    const challenges = [];
+    const challenges: PlaceThePoints[] = [];
 
     // CHALLENGE 5
-    const yIntercepts = ValuePool.rangeToArray( this.yRange, { excludeZero: true } );
+    const yIntercepts = ValuePool.rangeToArray( this.yRange, true /* excludeZero */ );
     const yIntercept = ValuePool.choose( yIntercepts );
     challenges.push( new PlaceThePoints(
       '5: PlaceThePoints, slope=0, random y-intercept (not zero)',
@@ -45,7 +38,7 @@ class GSIChallengeFactory4 extends GSIChallengeFactory3 {
       this.xRange, this.yRange ) );
 
     // CHALLENGE 6
-    const xIntercepts = ValuePool.rangeToArray( this.xRange, { excludeZero: true } );
+    const xIntercepts = ValuePool.rangeToArray( this.xRange, true /* excludeZero */ );
     const xIntercept = ValuePool.choose( xIntercepts );
     challenges.push( new PlaceThePoints(
       '6: PlaceThePoints, slope=undefined, random x-intercept (not zero)',
@@ -58,4 +51,3 @@ class GSIChallengeFactory4 extends GSIChallengeFactory3 {
 }
 
 graphingSlopeIntercept.register( 'GSIChallengeFactory4', GSIChallengeFactory4 );
-export default GSIChallengeFactory4;

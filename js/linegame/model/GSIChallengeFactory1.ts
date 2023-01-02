@@ -1,6 +1,5 @@
 // Copyright 2017-2021, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Creates game challenges for Level 1 in the 'Graphing Slope-Intercept' sim.
  *
@@ -10,6 +9,7 @@
 import dotRandom from '../../../../dot/js/dotRandom.js';
 import Range from '../../../../dot/js/Range.js';
 import BaseChallengeFactory from '../../../../graphing-lines/js/linegame/model/BaseChallengeFactory.js';
+import Challenge from '../../../../graphing-lines/js/linegame/model/Challenge.js';
 import EquationForm from '../../../../graphing-lines/js/linegame/model/EquationForm.js';
 import GraphTheLine from '../../../../graphing-lines/js/linegame/model/GraphTheLine.js';
 import MakeTheEquation from '../../../../graphing-lines/js/linegame/model/MakeTheEquation.js';
@@ -18,28 +18,22 @@ import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js
 import Fraction from '../../../../phetcommon/js/model/Fraction.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 
-class GSIChallengeFactory1 extends BaseChallengeFactory {
+export default class GSIChallengeFactory1 extends BaseChallengeFactory {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
-    super( options );
+  public constructor() {
+    super();
   }
 
   /**
    * Creates challenges for this game level.
-   * @returns {Challenge[]} array of challenges
-   * @public
-   * @override
    */
-  createChallenges() {
+  public override createChallenges(): Challenge[] {
 
     // pools of values for slope and y-intercept
-    const slopePool = new ValuePool( this.createSlopeArrays() );
-    const yInterceptPool = new ValuePool( this.createYInterceptArrays() );
+    const slopePool = new ValuePool<Fraction>( this.createSlopeArrays() );
+    const yInterceptPool = new ValuePool<number>( this.createYInterceptArrays() );
 
-    const challenges = [];
+    const challenges: Challenge[] = [];
 
     if ( dotRandom.nextBoolean() ) {
 
@@ -118,10 +112,8 @@ class GSIChallengeFactory1 extends BaseChallengeFactory {
 
   /**
    * Creates the sets of slopes used for generating challenges.
-   * @returns {Fraction[][]}
-   * @protected
    */
-  createSlopeArrays() {
+  protected createSlopeArrays(): Fraction[][] {
     return [
       [ new Fraction( 3, 2 ), new Fraction( 4, 3 ), new Fraction( 5, 2 ), new Fraction( 5, 3 ) ],
       [ new Fraction( 1, 2 ), new Fraction( 1, 3 ), new Fraction( 1, 4 ), new Fraction( 1, 5 ) ],
@@ -131,10 +123,8 @@ class GSIChallengeFactory1 extends BaseChallengeFactory {
 
   /**
    * Creates the sets of y-intercepts used for generating challenges.
-   * @returns {number[][]}
-   * @protected
    */
-  createYInterceptArrays() {
+  protected createYInterceptArrays(): number[][] {
     const yRangeSubset = new Range( -6, 4 );
     assert && assert( this.yRange.containsRange( yRangeSubset ), 'values are out of range' );
     return [
@@ -145,4 +135,3 @@ class GSIChallengeFactory1 extends BaseChallengeFactory {
 }
 
 graphingSlopeIntercept.register( 'GSIChallengeFactory1', GSIChallengeFactory1 );
-export default GSIChallengeFactory1;

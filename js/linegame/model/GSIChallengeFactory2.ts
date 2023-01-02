@@ -1,6 +1,5 @@
 // Copyright 2017-2020, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Creates game challenges for Level 2 in the 'Graphing Slope-Intercept' sim.
  * Identical to Level 1, but with different sets of possible slopes and y-intercepts.
@@ -13,25 +12,19 @@ import Range from '../../../../dot/js/Range.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import Fraction from '../../../../phetcommon/js/model/Fraction.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
-import GSIChallengeFactory1 from './GSIChallengeFactory1.ts';
+import GSIChallengeFactory1 from './GSIChallengeFactory1.js';
 
-class GSIChallengeFactory2 extends GSIChallengeFactory1 {
+export default class GSIChallengeFactory2 extends GSIChallengeFactory1 {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
-    super( options );
+  public constructor() {
+    super();
   }
 
   /**
    * Level 2 has a different set of possible slopes, so override this function.
    * Creates the sets of slopes used for generating challenges.
-   * @returns {Fraction[][]}
-   * @protected
-   * @override
    */
-  createSlopeArrays() {
+  protected override createSlopeArrays(): Fraction[][] {
     return [
 
       // positive and negative integers
@@ -89,11 +82,8 @@ class GSIChallengeFactory2 extends GSIChallengeFactory1 {
   /**
    * Level 2 has a different set of possible y-intercepts, so override this function.
    * Creates the sets of y-intercepts used for generating challenges.
-   * @returns {number[][]}
-   * @protected
-   * @override
    */
-  createYInterceptArrays() {
+  protected override createYInterceptArrays(): number[][] {
     return [
       ValuePool.rangeToArray( new Range( this.yRange.min, -1 ) ), // negative intercepts
       ValuePool.rangeToArray( new Range( 1, this.yRange.max ) )   // positive intercepts
@@ -102,4 +92,3 @@ class GSIChallengeFactory2 extends GSIChallengeFactory1 {
 }
 
 graphingSlopeIntercept.register( 'GSIChallengeFactory2', GSIChallengeFactory2 );
-export default GSIChallengeFactory2;
