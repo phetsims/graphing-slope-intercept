@@ -1,4 +1,4 @@
-// Copyright 2017-2020, University of Colorado Boulder
+// Copyright 2017-2023, University of Colorado Boulder
 
 /**
  * Creates game challenges for Level 4 in the 'Graphing Slope-Intercept' sim.
