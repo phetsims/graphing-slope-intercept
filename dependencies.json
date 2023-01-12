@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "b60b029721f4dea56832d0c128c597d7f02b9494",
+    "sha": "f7b2c6c45b74f499aadb216ee6544b29fbc01b30",
     "branch": "1.1"
   },
   "joist": {
@@ -49,7 +49,7 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "4c4907af89918a526b48fa010365449acb8805b3",
+    "sha": "1e240462cdef3105258ec6ef32c74a724e2de3ec",
     "branch": "HEAD"
   },
   "phetmarks": {
