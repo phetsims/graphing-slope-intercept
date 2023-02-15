@@ -16,7 +16,7 @@ import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
 import GSILineGameModel from './model/GSILineGameModel.js';
 import GSILineGameScreenView from './view/GSILineGameScreenView.js';
 
-export default class GSILineGameScreen extends Screen {
+export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineGameScreenView> {
 
   public constructor( tandem: Tandem, backgroundColorProperty: Property<Color | string> ) {
 
