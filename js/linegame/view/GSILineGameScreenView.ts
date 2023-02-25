@@ -12,12 +12,13 @@ import level5_png from '../../../../graphing-lines/images/level5_png.js';
 import level6_png from '../../../../graphing-lines/images/level6_png.js';
 import BaseGameScreenView from '../../../../graphing-lines/js/linegame/view/BaseGameScreenView.js';
 import GLRewardNode from '../../../../graphing-lines/js/linegame/view/GLRewardNode.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GSILineGameModel from '../model/GSILineGameModel.js';
 
 export default class GSILineGameScreenView extends BaseGameScreenView {
 
-  public constructor( model: GSILineGameModel ) {
+  public constructor( model: GSILineGameModel, tandem: Tandem ) {
 
     // Images for the level-selection buttons, ordered by level. Note that this reuses images from graphing-lines,
     // but assigns them to different levels than their file names indicate.
@@ -31,7 +32,7 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
       GLRewardNode.createSmileyFaceNodes
     ];
 
-    super( model, levelImages, rewardFactoryFunctions );
+    super( model, levelImages, rewardFactoryFunctions, tandem );
   }
 }
 

@@ -7,6 +7,7 @@
  */
 
 import BaseGameModel from '../../../../graphing-lines/js/linegame/model/BaseGameModel.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GSIChallengeFactory1 from './GSIChallengeFactory1.js';
 import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
@@ -15,7 +16,7 @@ import GSIChallengeFactory4 from './GSIChallengeFactory4.js';
 
 export default class GSILineGameModel extends BaseGameModel {
 
-  public constructor() {
+  public constructor( tandem: Tandem ) {
 
     // a challenge factory for each level
     const challengeFactories = [
@@ -25,7 +26,7 @@ export default class GSILineGameModel extends BaseGameModel {
       new GSIChallengeFactory4()
     ];
 
-    super( challengeFactories );
+    super( challengeFactories, tandem );
   }
 }
 

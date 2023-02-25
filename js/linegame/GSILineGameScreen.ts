@@ -28,8 +28,8 @@ export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineG
     };
 
     super(
-      () => new GSILineGameModel(),
-      model => new GSILineGameScreenView( model ),
+      () => new GSILineGameModel( tandem.createTandem( 'model' ) ),
+      model => new GSILineGameScreenView( model, tandem.createTandem( 'view' ) ),
       options
     );
   }
