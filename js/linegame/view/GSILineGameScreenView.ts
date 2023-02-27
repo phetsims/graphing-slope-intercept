@@ -25,14 +25,14 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
     const levelImages = [ level1_png, level3_png, level5_png, level6_png ];
 
     // functions that create nodes for the game reward, ordered by level
-    const rewardFactoryFunctions = [
+    const rewardNodeFunctions = [
       GLRewardNode.createGraphNodes,
       GLRewardNode.createPointToolNodes,
       GLRewardNode.createPaperAirplaneNodes,
       GLRewardNode.createSmileyFaceNodes
     ];
 
-    super( model, levelImages, rewardFactoryFunctions, tandem );
+    super( model, levelImages, rewardNodeFunctions, tandem );
   }
 }
 
