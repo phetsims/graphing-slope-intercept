@@ -26,7 +26,11 @@
     },
     "simulation": true,
     "supportsOutputJS": true,
-    "published": true
+    "published": true,
+    "screenNameKeys": [
+      "GRAPHING_LINES/screen.slopeIntercept",
+      "GRAPHING_LINES/screen.lineGame"
+    ]
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js",
