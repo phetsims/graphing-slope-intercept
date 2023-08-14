@@ -4,4 +4,4 @@ This simulation is a subset of the Graphing Lines simulation. It includes the "S
 "Line Game" screen that uses only slope-intercept form.
 
 For details on the implementation of Graphing Lines,
-see https://github.com/phetsims/graphing-lines/blob/master/doc/implementation-notes.md.
+see https://github.com/phetsims/graphing-lines/blob/main/doc/implementation-notes.md.
