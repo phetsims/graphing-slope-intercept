@@ -6,22 +6,19 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../axon/js/Property.js';
 import SlopeInterceptScreen from '../../graphing-lines/js/slopeintercept/SlopeInterceptScreen.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
-import { Color } from '../../scenery/js/imports.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GraphingSlopeInterceptStrings from './GraphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
+import GSIColors from './GSIColors.js';
 
 simLauncher.launch( () => {
 
-  const backgroundColorProperty = new Property<Color | string>( 'rgb( 226, 255, 249 )' ); // light blue-green
-
   const screens = [
-    new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), backgroundColorProperty ),
-    new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), backgroundColorProperty )
+    new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), GSIColors.screenBackgroundColorProperty ),
+    new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
   ];
 
   const sim = new Sim( GraphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].titleStringProperty, screens, {

@@ -6,11 +6,10 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
 import GLIconFactory from '../../../graphing-lines/js/common/view/GLIconFactory.js';
 import GraphingLinesStrings from '../../../graphing-lines/js/GraphingLinesStrings.js';
 import Screen from '../../../joist/js/Screen.js';
-import { Color } from '../../../scenery/js/imports.js';
+import { ProfileColorProperty } from '../../../scenery/js/imports.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
 import GSILineGameModel from './model/GSILineGameModel.js';
@@ -18,7 +17,7 @@ import GSILineGameScreenView from './view/GSILineGameScreenView.js';
 
 export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineGameScreenView> {
 
-  public constructor( tandem: Tandem, backgroundColorProperty: Property<Color | string> ) {
+  public constructor( tandem: Tandem, backgroundColorProperty: ProfileColorProperty ) {
 
     const options = {
       name: GraphingLinesStrings.screen.lineGameStringProperty,
