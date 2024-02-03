@@ -13,6 +13,7 @@ import GSIChallengeFactory1 from './GSIChallengeFactory1.js';
 import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
 import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
 import GSIChallengeFactory4 from './GSIChallengeFactory4.js';
+import { NUMBER_OF_GAME_LEVELS } from '../../GSIQueryParameters.js';
 
 export default class GSILineGameModel extends BaseGameModel {
 
@@ -25,6 +26,7 @@ export default class GSILineGameModel extends BaseGameModel {
       new GSIChallengeFactory3(),
       new GSIChallengeFactory4()
     ];
+    assert && assert( challengeFactories.length === NUMBER_OF_GAME_LEVELS );
 
     super( challengeFactories, tandem );
   }
