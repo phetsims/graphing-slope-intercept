@@ -14,10 +14,11 @@ import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
 import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
 import GSIChallengeFactory4 from './GSIChallengeFactory4.js';
 import { NUMBER_OF_GAME_LEVELS } from '../../GSIQueryParameters.js';
+import PreferencesModel from '../../../../joist/js/preferences/PreferencesModel.js';
 
 export default class GSILineGameModel extends BaseGameModel {
 
-  public constructor( tandem: Tandem ) {
+  public constructor( preferencesModel: PreferencesModel, tandem: Tandem ) {
 
     // a challenge factory for each level
     const challengeFactories = [
@@ -28,7 +29,7 @@ export default class GSILineGameModel extends BaseGameModel {
     ];
     assert && assert( challengeFactories.length === NUMBER_OF_GAME_LEVELS );
 
-    super( challengeFactories, tandem );
+    super( challengeFactories, preferencesModel, tandem );
   }
 }
 

@@ -13,15 +13,24 @@ import Tandem from '../../tandem/js/Tandem.js';
 import GraphingSlopeInterceptStrings from './GraphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 import GSIColors from './GSIColors.js';
+import PreferencesModel from '../../joist/js/preferences/PreferencesModel.js';
+import ClimberImages from './linegame/view/ClimberImages.js';
 
 simLauncher.launch( () => {
 
+  const preferencesModel = new PreferencesModel( {
+    localizationOptions: {
+      portrayals: ClimberImages.CLIMBER_PORTRAYALS
+    }
+  } );
+
   const screens = [
     new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), GSIColors.screenBackgroundColorProperty ),
-    new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
+    new GSILineGameScreen( preferencesModel, Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
   ];
 
   const sim = new Sim( GraphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].titleStringProperty, screens, {
+    preferencesModel: preferencesModel,
     credits: {
       leadDesign: 'Amanda McGarry, Ariel Paul',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',

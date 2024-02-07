@@ -14,10 +14,11 @@ import Tandem from '../../../tandem/js/Tandem.js';
 import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
 import GSILineGameModel from './model/GSILineGameModel.js';
 import GSILineGameScreenView from './view/GSILineGameScreenView.js';
+import PreferencesModel from '../../../joist/js/preferences/PreferencesModel.js';
 
 export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineGameScreenView> {
 
-  public constructor( tandem: Tandem, backgroundColorProperty: ProfileColorProperty ) {
+  public constructor( preferencesModel: PreferencesModel, tandem: Tandem, backgroundColorProperty: ProfileColorProperty ) {
 
     const options = {
       name: GraphingLinesStrings.screen.lineGameStringProperty,
@@ -27,7 +28,7 @@ export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineG
     };
 
     super(
-      () => new GSILineGameModel( tandem.createTandem( 'model' ) ),
+      () => new GSILineGameModel( preferencesModel, tandem.createTandem( 'model' ) ),
       model => new GSILineGameScreenView( model, tandem.createTandem( 'view' ) ),
       options
     );
