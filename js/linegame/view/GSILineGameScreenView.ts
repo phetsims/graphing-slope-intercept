@@ -14,14 +14,18 @@ import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GSILineGameModel from '../model/GSILineGameModel.js';
 import ClimberCharacters from '../../../../graphing-lines/js/linegame/view/ClimberCharacters.js';
 import ClimberImages from './ClimberImages.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import RegionAndCulturePortrayal from '../../../../joist/js/preferences/RegionAndCulturePortrayal.js';
 
 export default class GSILineGameScreenView extends BaseGameScreenView {
 
-  public constructor( model: GSILineGameModel, tandem: Tandem ) {
+  public constructor( model: GSILineGameModel,
+                      regionAndCulturePortrayalProperty: TReadOnlyProperty<RegionAndCulturePortrayal>,
+                      tandem: Tandem ) {
 
     // Images for the level-selection buttons, ordered by level. Note that this reuses images from graphing-lines,
     // but assigns them to different levels than their file names indicate.
-    const climberCharacters = new ClimberCharacters( model, ClimberImages );
+    const climberCharacters = new ClimberCharacters( regionAndCulturePortrayalProperty, ClimberImages );
     const levelImages = climberCharacters.climberNodes;
     assert && assert( levelImages.length === NUMBER_OF_GAME_LEVELS );
 

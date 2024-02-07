@@ -24,9 +24,12 @@ simLauncher.launch( () => {
     }
   } );
 
+  const regionAndCulturePortrayalProperty = preferencesModel.localizationModel.regionAndCulturePortrayalProperty!;
+  assert && assert( regionAndCulturePortrayalProperty, 'expected regionAndCulturePortrayalProperty to exist' );
+
   const screens = [
     new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), GSIColors.screenBackgroundColorProperty ),
-    new GSILineGameScreen( preferencesModel, Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
+    new GSILineGameScreen( regionAndCulturePortrayalProperty, Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
   ];
 
   const sim = new Sim( GraphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].titleStringProperty, screens, {

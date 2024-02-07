@@ -14,11 +14,13 @@ import Tandem from '../../../tandem/js/Tandem.js';
 import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
 import GSILineGameModel from './model/GSILineGameModel.js';
 import GSILineGameScreenView from './view/GSILineGameScreenView.js';
-import PreferencesModel from '../../../joist/js/preferences/PreferencesModel.js';
+import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
+import RegionAndCulturePortrayal from '../../../joist/js/preferences/RegionAndCulturePortrayal.js';
 
 export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineGameScreenView> {
 
-  public constructor( preferencesModel: PreferencesModel, tandem: Tandem, backgroundColorProperty: ProfileColorProperty ) {
+  public constructor( regionAndCulturePortrayalProperty: TReadOnlyProperty<RegionAndCulturePortrayal>,
+                      tandem: Tandem, backgroundColorProperty: ProfileColorProperty ) {
 
     const options = {
       name: GraphingLinesStrings.screen.lineGameStringProperty,
@@ -28,8 +30,8 @@ export default class GSILineGameScreen extends Screen<GSILineGameModel, GSILineG
     };
 
     super(
-      () => new GSILineGameModel( preferencesModel, tandem.createTandem( 'model' ) ),
-      model => new GSILineGameScreenView( model, tandem.createTandem( 'view' ) ),
+      () => new GSILineGameModel( tandem.createTandem( 'model' ) ),
+      model => new GSILineGameScreenView( model, regionAndCulturePortrayalProperty, tandem.createTandem( 'view' ) ),
       options
     );
   }
