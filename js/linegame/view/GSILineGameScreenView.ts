@@ -12,10 +12,10 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import GSIQueryParameters, { NUMBER_OF_GAME_LEVELS } from '../../GSIQueryParameters.js';
 import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GSILineGameModel from '../model/GSILineGameModel.js';
-import ClimberCharacters from '../../../../graphing-lines/js/linegame/view/ClimberCharacters.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import RegionAndCulturePortrayal from '../../../../joist/js/preferences/RegionAndCulturePortrayal.js';
 import GSILineGameConstants from '../GSILineGameConstants.js';
+import ClimberPortrayal from '../../../../graphing-lines/js/linegame/view/ClimberPortrayal.js';
 
 export default class GSILineGameScreenView extends BaseGameScreenView {
 
@@ -23,9 +23,9 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
                       regionAndCulturePortrayalProperty: TReadOnlyProperty<RegionAndCulturePortrayal>,
                       tandem: Tandem ) {
 
-    // Images for the level-selection buttons, ordered by level.
-    const climberCharacters = new ClimberCharacters( regionAndCulturePortrayalProperty, GSILineGameConstants.CLIMBER_PORTRAYALS );
-    assert && assert( climberCharacters.climberNodes.length === NUMBER_OF_GAME_LEVELS );
+    // Nodes that show 'climber' portrayals, for the level-selection buttons, ordered by level
+    const climberNodes = ClimberPortrayal.createClimberNodes( regionAndCulturePortrayalProperty, GSILineGameConstants.CLIMBER_PORTRAYALS );
+    assert && assert( climberNodes.length === NUMBER_OF_GAME_LEVELS );
 
     // functions that create nodes for the game reward, ordered by level
     const rewardNodeFunctions = [
@@ -36,7 +36,7 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
     ];
     assert && assert( rewardNodeFunctions.length === NUMBER_OF_GAME_LEVELS );
 
-    super( model, GSIQueryParameters.gameLevels, climberCharacters.climberNodes, rewardNodeFunctions, tandem );
+    super( model, GSIQueryParameters.gameLevels, climberNodes, rewardNodeFunctions, tandem );
   }
 }
 
