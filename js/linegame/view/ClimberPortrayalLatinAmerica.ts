@@ -4,7 +4,6 @@
  * This file instantiates the Latin America region and culture portrayals.
  *
  * @author Luisa Vargas
- *
  */
 
 import JoistStrings from '../../../../joist/js/JoistStrings.js';
@@ -18,12 +17,12 @@ import level6_svg from '../../../../graphing-lines/images/latin-america/level6_s
 const latinAmericaStringProperty = JoistStrings.preferences.tabs.localization.regionAndCulture.portrayalSets.latinAmericaStringProperty;
 
 const ClimberPortrayalLatinAmerica = new ClimberPortrayal(
+  LATIN_AMERICA_REGION_AND_CULTURE_ID,
   latinAmericaStringProperty,
   level1_svg,
   level3_svg,
   level5_svg,
-  level6_svg,
-  LATIN_AMERICA_REGION_AND_CULTURE_ID
+  level6_svg
 );
 
 export default ClimberPortrayalLatinAmerica;

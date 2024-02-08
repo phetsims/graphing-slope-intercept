@@ -4,7 +4,6 @@
  * This file instantiates the Africa region and culture portrayals.
  *
  * @author Luisa Vargas
- *
  */
 
 import JoistStrings from '../../../../joist/js/JoistStrings.js';
@@ -18,12 +17,12 @@ import level6_svg from '../../../../graphing-lines/images/africa/level6_svg.js';
 const africaStringProperty = JoistStrings.preferences.tabs.localization.regionAndCulture.portrayalSets.africaStringProperty;
 
 const ClimberPortrayalAfrica = new ClimberPortrayal(
+  AFRICA_REGION_AND_CULTURE_ID,
   africaStringProperty,
   level1_svg,
   level3_svg,
   level5_svg,
-  level6_svg,
-  AFRICA_REGION_AND_CULTURE_ID
+  level6_svg
 );
 
 export default ClimberPortrayalAfrica;
