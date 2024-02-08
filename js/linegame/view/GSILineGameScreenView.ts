@@ -23,11 +23,9 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
                       regionAndCulturePortrayalProperty: TReadOnlyProperty<RegionAndCulturePortrayal>,
                       tandem: Tandem ) {
 
-    // Images for the level-selection buttons, ordered by level. Note that this reuses images from graphing-lines,
-    // but assigns them to different levels than their file names indicate.
-    const climberCharacters = new ClimberCharacters( regionAndCulturePortrayalProperty, ClimberImages );
-    const levelImages = climberCharacters.climberNodes;
-    assert && assert( levelImages.length === NUMBER_OF_GAME_LEVELS );
+    // Images for the level-selection buttons, ordered by level.
+    const climberCharacters = new ClimberCharacters( regionAndCulturePortrayalProperty, ClimberImages.CLIMBER_PORTRAYALS );
+    assert && assert( climberCharacters.climberNodes.length === NUMBER_OF_GAME_LEVELS );
 
     // functions that create nodes for the game reward, ordered by level
     const rewardNodeFunctions = [
@@ -38,7 +36,7 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
     ];
     assert && assert( rewardNodeFunctions.length === NUMBER_OF_GAME_LEVELS );
 
-    super( model, GSIQueryParameters.gameLevels, levelImages, rewardNodeFunctions, tandem );
+    super( model, GSIQueryParameters.gameLevels, climberCharacters.climberNodes, rewardNodeFunctions, tandem );
   }
 }
 

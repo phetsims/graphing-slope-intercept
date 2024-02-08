@@ -19,10 +19,7 @@ const latinAmericaStringProperty = JoistStrings.preferences.tabs.localization.re
 const ClimberPortrayalLatinAmerica = new ClimberPortrayal(
   LATIN_AMERICA_REGION_AND_CULTURE_ID,
   latinAmericaStringProperty,
-  level1_svg,
-  level3_svg,
-  level5_svg,
-  level6_svg
+  [ level1_svg, level3_svg, level5_svg, level6_svg ]
 );
 
 export default ClimberPortrayalLatinAmerica;

@@ -19,10 +19,7 @@ const oceaniaStringProperty = JoistStrings.preferences.tabs.localization.regionA
 const ClimberPortrayalOceania = new ClimberPortrayal(
   OCEANIA_REGION_AND_CULTURE_ID,
   oceaniaStringProperty,
-  level1_svg,
-  level3_svg,
-  level5_svg,
-  level6_svg
+  [ level1_svg, level3_svg, level5_svg, level6_svg ]
 );
 
 export default ClimberPortrayalOceania;
