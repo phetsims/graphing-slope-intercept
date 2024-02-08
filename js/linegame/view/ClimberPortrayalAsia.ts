@@ -17,8 +17,8 @@ import level6_svg from '../../../../graphing-lines/images/asia/level6_svg.js';
 const asiaStringProperty = JoistStrings.preferences.tabs.localization.regionAndCulture.portrayalSets.asiaStringProperty;
 
 const ClimberPortrayalAsia = new ClimberPortrayal(
-  ASIA_REGION_AND_CULTURE_ID,
   asiaStringProperty,
+  ASIA_REGION_AND_CULTURE_ID,
   [ level1_svg, level3_svg, level5_svg, level6_svg ]
 );
 

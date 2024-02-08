@@ -17,8 +17,8 @@ import ClimberPortrayal from '../../../../graphing-lines/js/linegame/view/Climbe
 const unitedStatesOfAmericaStringProperty = JoistStrings.preferences.tabs.localization.regionAndCulture.portrayalSets.unitedStatesOfAmericaStringProperty;
 
 const ClimberPortrayalUSA = new ClimberPortrayal(
-  USA_REGION_AND_CULTURE_ID,
   unitedStatesOfAmericaStringProperty,
+  USA_REGION_AND_CULTURE_ID,
   [ level1_svg, level3_svg, level5_svg, level6_svg ]
 );
 

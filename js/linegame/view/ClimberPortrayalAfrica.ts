@@ -17,8 +17,8 @@ import level6_svg from '../../../../graphing-lines/images/africa/level6_svg.js';
 const africaStringProperty = JoistStrings.preferences.tabs.localization.regionAndCulture.portrayalSets.africaStringProperty;
 
 const ClimberPortrayalAfrica = new ClimberPortrayal(
-  AFRICA_REGION_AND_CULTURE_ID,
   africaStringProperty,
+  AFRICA_REGION_AND_CULTURE_ID,
   [ level1_svg, level3_svg, level5_svg, level6_svg ]
 );
 
