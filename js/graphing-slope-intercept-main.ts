@@ -14,13 +14,13 @@ import GraphingSlopeInterceptStrings from './GraphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 import GSIColors from './GSIColors.js';
 import PreferencesModel from '../../joist/js/preferences/PreferencesModel.js';
-import ClimberImages from './linegame/view/ClimberImages.js';
+import GSILineGameConstants from './linegame/GSILineGameConstants.js';
 
 simLauncher.launch( () => {
 
   const preferencesModel = new PreferencesModel( {
     localizationOptions: {
-      portrayals: ClimberImages.CLIMBER_PORTRAYALS
+      portrayals: GSILineGameConstants.CLIMBER_PORTRAYALS
     }
   } );
 
