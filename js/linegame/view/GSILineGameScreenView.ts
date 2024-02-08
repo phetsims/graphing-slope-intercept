@@ -15,7 +15,7 @@ import GSILineGameModel from '../model/GSILineGameModel.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import RegionAndCulturePortrayal from '../../../../joist/js/preferences/RegionAndCulturePortrayal.js';
 import GSILineGameConstants from '../GSILineGameConstants.js';
-import ClimberPortrayal from '../../../../graphing-lines/js/linegame/view/ClimberPortrayal.js';
+import ClimberPortrayal from '../../../../graphing-lines/js/linegame/view/portrayals/ClimberPortrayal.js';
 
 export default class GSILineGameScreenView extends BaseGameScreenView {
 
