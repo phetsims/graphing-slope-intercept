@@ -6,7 +6,7 @@
  * @author Luisa Vargas
  */
 
-import ClimberPortrayal from '../../../../graphing-lines/js/linegame/view/portrayals/ClimberPortrayal.js';
+import ClimberPortrayal from '../../../../graphing-lines/js/linegame/view/ClimberPortrayal.js';
 import JoistStrings from '../../../../joist/js/JoistStrings.js';
 import { USA_REGION_AND_CULTURE_ID } from '../../../../joist/js/preferences/RegionAndCulturePortrayal.js';
 import level1_svg from '../../../../graphing-lines/images/usa/level1_svg.js';
