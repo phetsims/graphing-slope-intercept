@@ -12,7 +12,7 @@ import { OCEANIA_REGION_AND_CULTURE_ID } from '../../../../joist/js/preferences/
 import level1_svg from '../../../../graphing-slope-intercept/images/asia/level1_svg.js';
 import level2_svg from '../../../../graphing-slope-intercept/images/oceania/level2_svg.js';
 import level3_svg from '../../../../graphing-slope-intercept/images/oceania/level3_svg.js';
-import level4_svg from '../../../../graphing-lines/images/asia/level4_svg.js';
+import level4_svg from '../../../../graphing-slope-intercept/images/asia/level4_svg.js';
 
 const ClimberPortrayalOceania = new ClimberPortrayal(
   JoistStrings.preferences.tabs.localization.regionAndCulture.portrayalSets.oceaniaStringProperty,
