@@ -1,9 +1,9 @@
 {
   "usa": {
-    "level1": "images/usaLevel1_svg.ts",
-    "level2": "images/usaLevel2_svg.ts",
-    "level3": "images/usaLevel3_svg.ts",
-    "level4": "images/usaLevel4_svg.ts"
+    "level1": "../graphing-lines/images/usaLevel1_svg.ts",
+    "level2": "../graphing-lines/images/usaLevel3_svg.ts",
+    "level3": "../graphing-lines/images/usaLevel5_svg.ts",
+    "level4": "../graphing-lines/images/usaLevel6_svg.ts"
   },
   "africa": {
     "level1": "images/africaLevel1_svg.ts",

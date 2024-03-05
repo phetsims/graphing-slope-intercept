@@ -6,6 +6,10 @@
 /* eslint-disable */
 import LocalizedImageProperty from '../../joist/js/i18n/LocalizedImageProperty.js';
 import graphingSlopeIntercept from './graphingSlopeIntercept.js';
+import usaLevel1_svg from '../../graphing-lines/images/usaLevel1_svg.js';
+import usaLevel3_svg from '../../graphing-lines/images/usaLevel3_svg.js';
+import usaLevel5_svg from '../../graphing-lines/images/usaLevel5_svg.js';
+import usaLevel6_svg from '../../graphing-lines/images/usaLevel6_svg.js';
 import africaLevel1_svg from '../images/africaLevel1_svg.js';
 import africaLevel2_svg from '../images/africaLevel2_svg.js';
 import africaLevel3_svg from '../images/africaLevel3_svg.js';
@@ -25,10 +29,6 @@ import latinAmericaLevel4_svg from '../images/latinAmericaLevel4_svg.js';
 import oceaniaLevel1_svg from '../images/oceaniaLevel1_svg.js';
 import oceaniaLevel2_svg from '../images/oceaniaLevel2_svg.js';
 import oceaniaLevel3_svg from '../images/oceaniaLevel3_svg.js';
-import usaLevel1_svg from '../images/usaLevel1_svg.js';
-import usaLevel2_svg from '../images/usaLevel2_svg.js';
-import usaLevel3_svg from '../images/usaLevel3_svg.js';
-import usaLevel4_svg from '../images/usaLevel4_svg.js';
 
 const GraphingSlopeInterceptImages = {
   level1ImageProperty: new LocalizedImageProperty( 'level1', {
@@ -40,7 +40,7 @@ const GraphingSlopeInterceptImages = {
     oceania: oceaniaLevel1_svg
   } ),
   level2ImageProperty: new LocalizedImageProperty( 'level2', {
-    usa: usaLevel2_svg,
+    usa: usaLevel3_svg,
     africa: africaLevel2_svg,
     africaModest: africaModestLevel2_svg,
     asia: asiaLevel2_svg,
@@ -48,7 +48,7 @@ const GraphingSlopeInterceptImages = {
     oceania: oceaniaLevel2_svg
   } ),
   level3ImageProperty: new LocalizedImageProperty( 'level3', {
-    usa: usaLevel3_svg,
+    usa: usaLevel5_svg,
     africa: africaLevel3_svg,
     africaModest: africaModestLevel3_svg,
     asia: asiaLevel3_svg,
@@ -56,7 +56,7 @@ const GraphingSlopeInterceptImages = {
     oceania: oceaniaLevel3_svg
   } ),
   level4ImageProperty: new LocalizedImageProperty( 'level4', {
-    usa: usaLevel4_svg,
+    usa: usaLevel6_svg,
     africa: africaLevel4_svg,
     africaModest: africaModestLevel4_svg,
     asia: asiaLevel4_svg,
