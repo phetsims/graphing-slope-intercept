@@ -13,27 +13,15 @@ import Tandem from '../../tandem/js/Tandem.js';
 import GraphingSlopeInterceptStrings from './GraphingSlopeInterceptStrings.js';
 import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 import GSIColors from './GSIColors.js';
-import PreferencesModel from '../../joist/js/preferences/PreferencesModel.js';
-import GSILineGameConstants from './linegame/GSILineGameConstants.js';
 
 simLauncher.launch( () => {
 
-  const preferencesModel = new PreferencesModel( {
-    localizationOptions: {
-      portrayals: GSILineGameConstants.CLIMBER_PORTRAYALS
-    }
-  } );
-
-  const regionAndCulturePortrayalProperty = preferencesModel.localizationModel.regionAndCulturePortrayalProperty!;
-  assert && assert( regionAndCulturePortrayalProperty, 'expected regionAndCulturePortrayalProperty to exist' );
-
   const screens = [
     new SlopeInterceptScreen( Tandem.ROOT.createTandem( 'slopeInterceptScreen' ), GSIColors.screenBackgroundColorProperty ),
-    new GSILineGameScreen( regionAndCulturePortrayalProperty, Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
+    new GSILineGameScreen( Tandem.ROOT.createTandem( 'lineGSILineGameScreen' ), GSIColors.screenBackgroundColorProperty )
   ];
 
   const sim = new Sim( GraphingSlopeInterceptStrings[ 'graphing-slope-intercept' ].titleStringProperty, screens, {
-    preferencesModel: preferencesModel,
     credits: {
       leadDesign: 'Amanda McGarry, Ariel Paul',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
