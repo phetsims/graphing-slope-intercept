@@ -32,36 +32,36 @@ import oceaniaLevel3_svg from '../images/oceaniaLevel3_svg.js';
 
 const GraphingSlopeInterceptImages = {
   level1ImageProperty: new LocalizedImageProperty( 'level1', {
-    usa: usaLevel1_svg,
     africa: africaLevel1_svg,
     africaModest: africaModestLevel1_svg,
     asia: asiaLevel1_svg,
     latinAmerica: latinAmericaLevel1_svg,
-    oceania: oceaniaLevel1_svg
+    oceania: oceaniaLevel1_svg,
+    usa: usaLevel1_svg
   } ),
   level2ImageProperty: new LocalizedImageProperty( 'level2', {
-    usa: usaLevel3_svg,
     africa: africaLevel2_svg,
     africaModest: africaModestLevel2_svg,
     asia: asiaLevel2_svg,
     latinAmerica: latinAmericaLevel2_svg,
-    oceania: oceaniaLevel2_svg
+    oceania: oceaniaLevel2_svg,
+    usa: usaLevel3_svg
   } ),
   level3ImageProperty: new LocalizedImageProperty( 'level3', {
-    usa: usaLevel5_svg,
     africa: africaLevel3_svg,
     africaModest: africaModestLevel3_svg,
     asia: asiaLevel3_svg,
     latinAmerica: latinAmericaLevel3_svg,
-    oceania: oceaniaLevel3_svg
+    oceania: oceaniaLevel3_svg,
+    usa: usaLevel5_svg
   } ),
   level4ImageProperty: new LocalizedImageProperty( 'level4', {
-    usa: usaLevel6_svg,
     africa: africaLevel4_svg,
     africaModest: africaModestLevel4_svg,
     asia: asiaLevel4_svg,
     latinAmerica: latinAmericaLevel4_svg,
-    oceania: asiaLevel4_svg
+    oceania: asiaLevel4_svg,
+    usa: usaLevel6_svg
   } )
 };
 
