@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "ce69d8fbdcb9206d7dacabcb41fe47837adad613",
+    "sha": "e7bd6fb17528d3a806db2d4603a9307d344e5261",
     "branch": "HEAD"
   },
   "dot": {
@@ -25,11 +25,11 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "75e4a655339cd42e37f2327187993b50155e5f7d",
+    "sha": "51dc91dbef05edd268f59c678beb9b6d21c25acb",
     "branch": "1.1"
   },
   "joist": {
-    "sha": "dcdfcf94e8245e0e442df81ca6fbf4f3cedfb348",
+    "sha": "ac3ced25dcb7687c75b5d23183b5498e9ee93b68",
     "branch": "HEAD"
   },
   "kite": {
