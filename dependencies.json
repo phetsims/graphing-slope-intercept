@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.2.0-rc.1 Thu Apr 18 2024 15:00:29 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# graphing-slope-intercept 1.2.0-rc.1 Thu Apr 18 2024 15:35:35 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "347e7eeac1424adb6023fb06a619d6ea01a0620f",
     "branch": "HEAD"
@@ -22,10 +22,10 @@
   },
   "graphing-lines": {
     "sha": "c21e172e2a7c0200f10edcab03e4352934823e06",
-    "branch": "graphing-slope-intercept-1.2"
+    "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "419f2954d682e9016d11b0a9fa1187c26fcfb699",
+    "sha": "fb0fa456d8103a54c7863f117ea8afb2029354ab",
     "branch": "1.2"
   },
   "joist": {
@@ -69,12 +69,12 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "8903c1c2a957d1d3dac449b41c0f5392b83bcb90",
-    "branch": "HEAD"
+    "sha": "95f59396acab70c79ab8cdac1be2919e07a4d988",
+    "branch": "graphing-slope-intercept-1.2"
   },
   "scenery-phet": {
-    "sha": "f12ace69ce2ec9749ce8eba0a3f72e4f2af9bf90",
-    "branch": "HEAD"
+    "sha": "cbd1ffbb17d4a952b9cad2ed28e27cb0850eefe7",
+    "branch": "graphing-slope-intercept-1.2"
   },
   "sherpa": {
     "sha": "ddbebc40fd0137f82235ca6ba079dd473bd5b2e6",
