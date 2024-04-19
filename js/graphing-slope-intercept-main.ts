@@ -26,7 +26,7 @@ simLauncher.launch( () => {
       leadDesign: 'Amanda McGarry, Ariel Paul',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
       team: 'Bryce Gruneich, Karina K. R. Hensberry, Patricia Loeblein, Kathy Perkins',
-      graphicArts: 'Megan Lai, Sharon Siman-Tov',
+      graphicArts: 'Mariah Hermsmeyer, Megan Lai, Sharon Siman-Tov',
       qualityAssurance: 'Steele Dalton, ' +
                         'Alex Dornan, ' +
                         'Jaron Droder, ' +
