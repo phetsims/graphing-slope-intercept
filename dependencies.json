@@ -1,5 +1,5 @@
 {
-  "comment": "# graphing-slope-intercept 1.2.3-rc.1 Tue Jul 16 2024 16:29:02 GMT-0400 (Eastern Daylight Time)",
+  "comment": "# graphing-slope-intercept 1.2.3 Wed Jul 17 2024 16:46:11 GMT-0400 (Eastern Daylight Time)",
   "assert": {
     "sha": "347e7eeac1424adb6023fb06a619d6ea01a0620f",
     "branch": "HEAD"
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "9ee8dac60f4aa4ef79466ed1536e52d3581cea6f",
+    "sha": "45b08d2f70a0a63d377b23c66dbb890656df38d1",
     "branch": "1.2"
   },
   "joist": {
