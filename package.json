@@ -65,7 +65,7 @@
         },
         "parserOptions": {
           "project": [
-            "../graphing-slope-intercept/tsconfig.json"
+            "../chipper/tsconfig/eslint-all/tsconfig.json"
           ]
         }
       }
