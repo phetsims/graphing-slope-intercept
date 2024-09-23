@@ -11,8 +11,8 @@ import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GraphingSlopeInterceptStrings from './GraphingSlopeInterceptStrings.js';
-import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 import GSIColors from './GSIColors.js';
+import GSILineGameScreen from './linegame/GSILineGameScreen.js';
 
 simLauncher.launch( () => {
 

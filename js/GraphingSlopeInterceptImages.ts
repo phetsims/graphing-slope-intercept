@@ -4,6 +4,7 @@
  * Auto-generated from modulify, DO NOT manually modify.
  */
 /* eslint-disable */
+/* @formatter:off */
 import LocalizedImageProperty from '../../joist/js/i18n/LocalizedImageProperty.js';
 import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 import usaLevel1_svg from '../../graphing-lines/images/usa/usaLevel1_svg.js';

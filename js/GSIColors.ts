@@ -6,8 +6,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 import { ProfileColorProperty } from '../../scenery/js/imports.js';
+import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 
 const GSIColors = {
 
