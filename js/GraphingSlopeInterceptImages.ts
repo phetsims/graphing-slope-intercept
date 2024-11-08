@@ -1,15 +1,16 @@
 // Copyright 2024, University of Colorado Boulder
 
-import usaLevel1_svg from '../../graphing-lines/images/usa/usaLevel1_svg.js';
-import usaLevel3_svg from '../../graphing-lines/images/usa/usaLevel3_svg.js';
-import usaLevel5_svg from '../../graphing-lines/images/usa/usaLevel5_svg.js';
-import usaLevel6_svg from '../../graphing-lines/images/usa/usaLevel6_svg.js';
 /**
  * Auto-generated from modulify, DO NOT manually modify.
  */
 /* eslint-disable */
 /* @formatter:off */
 import LocalizedImageProperty from '../../joist/js/i18n/LocalizedImageProperty.js';
+import graphingSlopeIntercept from './graphingSlopeIntercept.js';
+import usaLevel1_svg from '../../graphing-lines/images/usa/usaLevel1_svg.js';
+import usaLevel3_svg from '../../graphing-lines/images/usa/usaLevel3_svg.js';
+import usaLevel5_svg from '../../graphing-lines/images/usa/usaLevel5_svg.js';
+import usaLevel6_svg from '../../graphing-lines/images/usa/usaLevel6_svg.js';
 import africaLevel1_svg from '../images/africa/africaLevel1_svg.js';
 import africaLevel2_svg from '../images/africa/africaLevel2_svg.js';
 import africaLevel3_svg from '../images/africa/africaLevel3_svg.js';
@@ -29,7 +30,6 @@ import latinAmericaLevel4_svg from '../images/latinAmerica/latinAmericaLevel4_sv
 import oceaniaLevel1_svg from '../images/oceania/oceaniaLevel1_svg.js';
 import oceaniaLevel2_svg from '../images/oceania/oceaniaLevel2_svg.js';
 import oceaniaLevel3_svg from '../images/oceania/oceaniaLevel3_svg.js';
-import graphingSlopeIntercept from './graphingSlopeIntercept.js';
 
 const GraphingSlopeInterceptImages = {
   level1ImageProperty: new LocalizedImageProperty( 'level1', {
