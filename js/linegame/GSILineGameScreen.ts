@@ -9,7 +9,7 @@
 import GLIconFactory from '../../../graphing-lines/js/common/view/GLIconFactory.js';
 import GraphingLinesStrings from '../../../graphing-lines/js/GraphingLinesStrings.js';
 import Screen from '../../../joist/js/Screen.js';
-import { ProfileColorProperty } from '../../../scenery/js/imports.js';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import graphingSlopeIntercept from '../graphingSlopeIntercept.js';
 import GSILineGameModel from './model/GSILineGameModel.js';
