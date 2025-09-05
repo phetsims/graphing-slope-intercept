@@ -29,6 +29,10 @@ For an exemplar, see https://github.com/phetsims/balancing-chemical-equations/bl
 *
 -->
 
+<!-- 1.3
+⚠️Best times are no longer shown below the buttons for the levels in the Game screen.
+-->
+
 ## 1.2 (2024-04-23)
 
 ### New Features
