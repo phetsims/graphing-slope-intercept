@@ -9,7 +9,7 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "bc7d44b6d80d8fa0b141de0d8c86e992dc23330f",
+    "sha": "0c0641ec74c4bfbd537d32c0adeff916552f159d",
     "branch": "HEAD"
   },
   "chipper": {
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "1bf2469d7fb60c97be82ec419a918028e39f19fd",
+    "sha": "772c69bad093a80f095d1e650737f06479276b94",
     "branch": "1.2"
   },
   "joist": {
