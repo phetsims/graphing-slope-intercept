@@ -8,7 +8,6 @@
 
 import BaseGameModel from '../../../../graphing-lines/js/linegame/model/BaseGameModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import { NUMBER_OF_GAME_LEVELS } from '../../GSIQueryParameters.js';
 import GSIChallengeFactory1 from './GSIChallengeFactory1.js';
 import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
@@ -31,5 +30,3 @@ export default class GSILineGameModel extends BaseGameModel {
     super( challengeFactories, tandem );
   }
 }
-
-graphingSlopeIntercept.register( 'GSILineGameModel', GSILineGameModel );

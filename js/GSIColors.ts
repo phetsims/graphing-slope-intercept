@@ -17,6 +17,4 @@ const GSIColors = {
   } )
 };
 
-graphingSlopeIntercept.register( 'GSIColors', GSIColors );
-
 export default GSIColors;

@@ -18,7 +18,6 @@ import ManipulationMode from '../../../../graphing-lines/js/linegame/model/Manip
 import PlaceThePoints from '../../../../graphing-lines/js/linegame/model/PlaceThePoints.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import Fraction from '../../../../phetcommon/js/model/Fraction.js';
-import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GSIChallengeFactory2 from './GSIChallengeFactory2.js';
 
 export default class GSIChallengeFactory3 extends GSIChallengeFactory2 {
@@ -123,5 +122,3 @@ export default class GSIChallengeFactory3 extends GSIChallengeFactory2 {
     return challenges;
   }
 }
-
-graphingSlopeIntercept.register( 'GSIChallengeFactory3', GSIChallengeFactory3 );

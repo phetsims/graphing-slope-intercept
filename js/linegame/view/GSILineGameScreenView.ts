@@ -9,7 +9,6 @@
 import BaseGameScreenView from '../../../../graphing-lines/js/linegame/view/BaseGameScreenView.js';
 import GLRewardNode from '../../../../graphing-lines/js/linegame/view/GLRewardNode.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GraphingSlopeInterceptImages from '../../GraphingSlopeInterceptImages.js';
 import GSIQueryParameters, { NUMBER_OF_GAME_LEVELS } from '../../GSIQueryParameters.js';
 import GSILineGameModel from '../model/GSILineGameModel.js';
@@ -38,5 +37,3 @@ export default class GSILineGameScreenView extends BaseGameScreenView {
     super( model, GSIQueryParameters.gameLevels, levelImageProperties, rewardNodeFunctions, tandem );
   }
 }
-
-graphingSlopeIntercept.register( 'GSILineGameScreenView', GSILineGameScreenView );

@@ -12,7 +12,6 @@ import Line from '../../../../graphing-lines/js/common/model/Line.js';
 import EquationForm from '../../../../graphing-lines/js/linegame/model/EquationForm.js';
 import PlaceThePoints from '../../../../graphing-lines/js/linegame/model/PlaceThePoints.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
-import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 import GSIChallengeFactory3 from './GSIChallengeFactory3.js';
 
 export default class GSIChallengeFactory4 extends GSIChallengeFactory3 {
@@ -49,5 +48,3 @@ export default class GSIChallengeFactory4 extends GSIChallengeFactory3 {
     return challenges;
   }
 }
-
-graphingSlopeIntercept.register( 'GSIChallengeFactory4', GSIChallengeFactory4 );

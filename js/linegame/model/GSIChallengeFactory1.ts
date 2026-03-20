@@ -16,7 +16,6 @@ import MakeTheEquation from '../../../../graphing-lines/js/linegame/model/MakeTh
 import ManipulationMode from '../../../../graphing-lines/js/linegame/model/ManipulationMode.js';
 import ValuePool from '../../../../graphing-lines/js/linegame/model/ValuePool.js';
 import Fraction from '../../../../phetcommon/js/model/Fraction.js';
-import graphingSlopeIntercept from '../../graphingSlopeIntercept.js';
 
 export default class GSIChallengeFactory1 extends BaseChallengeFactory {
 
@@ -133,5 +132,3 @@ export default class GSIChallengeFactory1 extends BaseChallengeFactory {
     ];
   }
 }
-
-graphingSlopeIntercept.register( 'GSIChallengeFactory1', GSIChallengeFactory1 );
