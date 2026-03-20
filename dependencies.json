@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "a7945c2332b4c8ef92fb5d1111d28f466a0986ed",
+    "sha": "c89956e0b11a6cd084cd009197321fe388a580c3",
     "branch": "HEAD"
   },
   "dot": {
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "18f6357ebc9471c61a64b550628ceb734c55978d",
+    "sha": "4975948383ae4cf6f75ddfd9d961c2bc47edf998",
     "branch": "1.2"
   },
   "joist": {
