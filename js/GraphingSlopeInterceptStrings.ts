@@ -19,4 +19,6 @@ type StringsType = {
 
 const GraphingSlopeInterceptStrings = getStringModule( 'GRAPHING_SLOPE_INTERCEPT' ) as StringsType;
 
+graphingSlopeIntercept.register( 'GraphingSlopeInterceptStrings', GraphingSlopeInterceptStrings );
+
 export default GraphingSlopeInterceptStrings;

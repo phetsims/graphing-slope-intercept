@@ -66,4 +66,6 @@ const GraphingSlopeInterceptImages = {
   } )
 };
 
+graphingSlopeIntercept.register( 'GraphingSlopeInterceptImages', GraphingSlopeInterceptImages );
+
 export default GraphingSlopeInterceptImages;
