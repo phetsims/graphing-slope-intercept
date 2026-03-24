@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "graphing-slope-intercept": {
-    "sha": "7cd4ce7fd028640a064e6ecea21ec334d2bb0678",
+    "sha": "b52bc9af803867ea2e96c9ed4ae087fc78543b3e",
     "branch": "1.2"
   },
   "joist": {
@@ -69,7 +69,7 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "cefd2430b6b548acd0c82cc996051af719e96ccc",
+    "sha": "0cb0297990aa52fdf30c38104ecd0e9cef181988",
     "branch": "HEAD"
   },
   "scenery-phet": {
